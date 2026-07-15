@@ -148,193 +148,218 @@
     .actu-hero-card .card-cat {
       background: var(--vert); color: #fff;
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 4px 12px; border-radius: 20px;
+      padding: 5px 11px; border-radius: 20px;
     }
-    .actu-hero-card .card-date { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
-    .actu-hero-card h2 {
-      font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 14px;
+    .actu-hero-card .card-date {
+      font-size: 0.78rem; color: rgba(255,255,255,0.75); font-weight: 500;
     }
-    .actu-hero-card .card-texte {
-      font-size: 0.92rem; color: rgba(255,255,255,0.82);
-      line-height: 1.7; max-height: 0; overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
-      opacity: 0;
-    }
-    .actu-hero-card:hover .card-texte { max-height: 120px; opacity: 1; }
+    .actu-hero-card h2 { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); color: #fff; font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
+    .actu-hero-card .card-texte { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 0; }
+    .actu-hero-card.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2,0.8,0.2,1), transform 0.7s cubic-bezier(0.2,0.8,0.2,1); }
+    .actu-hero-card.reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Fallback image hero */
-    .actu-hero-card.no-img .card-bg {
-      background: linear-gradient(135deg, var(--bleu), var(--vert)) !important;
-    }
-
-    /* ===== GRILLE MIXTE ===== */
-    .actu-grid {
+    /* ===== GRILLE ACTU ===== */
+    #actu-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
     }
 
-    /* ===== CARTE STANDARD ===== */
+    /* ===== CARD STANDARD ===== */
     .actu-card {
-      background: var(--fond); border-radius: 14px; overflow: hidden;
-      box-shadow: var(--ombre); cursor: pointer;
+      border-radius: 14px; overflow: hidden;
+      background: var(--blanc);
+      box-shadow: 0 2px 12px rgba(27,58,92,0.08);
+      transition: all 0.35s cubic-bezier(0.2,0.8,0.2,1);
+      cursor: pointer;
       display: flex; flex-direction: column;
-      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .actu-card:hover {
+      box-shadow: 0 12px 32px rgba(27,58,92,0.15);
+      transform: translateY(-6px);
+    }
+    .actu-card .card-img-wrap {
       position: relative;
+      width: 100%; height: 200px;
+      overflow: hidden;
+      background: var(--vert-p);
     }
-    .actu-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(27,58,92,0.16); }
-
-    .card-img-wrap {
-      position: relative; height: 200px; overflow: hidden;
-      background: linear-gradient(135deg, var(--vert-p), #c3dfc9);
+    .actu-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
-    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .actu-card:hover .card-img-wrap img { transform: scale(1.06); }
-
-    /* Overlay rideau montant */
-    .card-rideau {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(46,125,79,0.92) 0%, rgba(27,58,92,0.75) 100%);
-      transform: translateY(100%);
-      transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-    }
-    .actu-card:hover .card-rideau { transform: translateY(0); }
-    .rideau-texte {
-      font-size: 0.85rem; color: rgba(255,255,255,0.92);
-      line-height: 1.65; text-align: center;
-      display: -webkit-box; -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical; overflow: hidden;
-    }
-
-    /* Icône placeholder si pas d'image */
-    .img-placeholder {
+    .actu-card:hover img { transform: scale(1.06); }
+    .actu-card .img-placeholder {
       width: 100%; height: 100%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2.8rem;
+      font-size: 3rem; background: linear-gradient(135deg, var(--vert-p), rgba(46,125,79,0.08));
     }
-
-    .card-body { padding: 22px 20px; flex: 1; display: flex; flex-direction: column; }
-    .card-meta-sm { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-    .card-cat-sm {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--vert);
-      border: 1.5px solid var(--vert); border-radius: 20px; padding: 3px 10px;
+    .actu-card .card-rideau {
+      position: absolute; inset: 0;
+      background: rgba(27,58,92,0.88);
+      padding: 20px;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.35s ease;
     }
-    .card-date-sm { font-size: 0.75rem; color: var(--gris-l); }
-    .card-body h3 { font-family: var(--serif); font-size: 1.05rem; color: var(--bleu); font-weight: 600; line-height: 1.3; flex: 1; }
-
-    /* ===== ÉTAT VIDE / ERREUR ===== */
-    .state-msg { text-align: center; padding: 60px 20px; color: var(--gris-l); }
-    .state-msg span { font-size: 2.5rem; display: block; margin-bottom: 12px; }
+    .actu-card:hover .card-rideau { opacity: 1; }
+    .actu-card .rideau-texte {
+      color: #fff; font-size: 0.9rem; line-height: 1.6;
+      text-align: center; max-height: 100%; overflow: auto;
+    }
+    .actu-card .card-body {
+      padding: 20px;
+      display: flex; flex-direction: column;
+      gap: 12px; flex-grow: 1;
+    }
+    .actu-card .card-meta-sm {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      font-size: 0.72rem;
+    }
+    .actu-card .card-cat-sm {
+      background: var(--vert); color: #fff;
+      padding: 4px 10px; border-radius: 16px;
+      font-weight: 700; letter-spacing: 0.05em;
+    }
+    .actu-card .card-date-sm {
+      color: var(--gris-l); font-weight: 500;
+    }
+    .actu-card h3 {
+      font-family: var(--serif); font-size: 1.1rem;
+      color: var(--bleu); font-weight: 700; line-height: 1.35;
+      margin: 0;
+    }
 
     /* ===== MODAL ===== */
-    .modal-backdrop {
-      position: fixed; inset: 0; z-index: 2000;
-      background: rgba(10,20,40,0.75);
-      backdrop-filter: blur(4px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s;
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
+      z-index: 2000; opacity: 0; transition: opacity 0.3s ease;
     }
-    .modal-backdrop.open { opacity: 1; pointer-events: all; }
+    .modal-overlay.active { display: flex; opacity: 1; }
+    .modal-overlay { align-items: center; justify-content: center; padding: 20px; }
     .modal {
-      background: var(--blanc); border-radius: 18px;
-      max-width: 680px; width: 100%;
-      max-height: 90vh; overflow-y: auto;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
-      transform: translateY(30px) scale(0.97);
-      transition: transform 0.3s, opacity 0.3s;
-      opacity: 0;
+      background: var(--blanc);
+      border-radius: 20px; max-width: 700px;
+      width: 100%; max-height: 85vh; overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      opacity: 0; transform: scale(0.92);
+      transition: opacity 0.35s ease, transform 0.35s ease;
     }
-    .modal-backdrop.open .modal { transform: translateY(0) scale(1); opacity: 1; }
-    .modal-img { height: 280px; position: relative; overflow: hidden; border-radius: 18px 18px 0 0; }
-    .modal-img img { width: 100%; height: 100%; object-fit: cover; }
-    .modal-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: linear-gradient(135deg, var(--vert-p), #c3dfc9); }
-    .modal-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,35,64,0.6) 0%, transparent 60%); }
-    .modal-cat-badge {
-      position: absolute; bottom: 20px; left: 24px;
-      background: var(--vert); color: #fff;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
+    .modal-overlay.active .modal { opacity: 1; transform: scale(1); }
+    .modal-header {
+      position: relative; height: 320px;
+      background: center/cover no-repeat;
+      overflow: hidden;
     }
-    .modal-body { padding: 32px 36px 36px; }
-    .modal-date { font-size: 0.78rem; color: var(--gris-l); margin-bottom: 12px; }
-    .modal-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--bleu); line-height: 1.25; margin-bottom: 20px; }
-    .modal-divider { width: 40px; height: 3px; background: linear-gradient(to right, var(--vert), var(--bleu)); border-radius: 2px; margin-bottom: 20px; }
-    .modal-contenu { font-size: 0.95rem; color: #444; line-height: 1.85; white-space: pre-wrap; }
+    .modal-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    }
     .modal-close {
-      position: absolute; top: 16px; right: 16px; z-index: 10;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,0.9); border: none; cursor: pointer;
+      position: absolute; top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.9); border: none;
+      border-radius: 50%; cursor: pointer; font-size: 1.4rem;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; color: var(--bleu);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-      transition: background 0.2s, transform 0.2s;
+      transition: all 0.2s;
+      z-index: 1;
     }
-    .modal-close:hover { background: #fff; transform: scale(1.1); }
-    .modal-img { position: relative; }
+    .modal-close:hover { background: #fff; transform: rotate(90deg); }
+    .modal-body {
+      padding: 40px;
+    }
+    .modal-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .modal-cat {
+      background: var(--vert); color: #fff;
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+    }
+    .modal-date {
+      font-size: 0.85rem; color: var(--gris-l); font-weight: 600;
+    }
+    .modal h2 {
+      font-family: var(--serif); font-size: 1.9rem;
+      color: var(--bleu); font-weight: 700; line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .modal-texte {
+      font-size: 0.95rem; color: #444; line-height: 1.8;
+      margin-bottom: 32px; white-space: pre-wrap; word-break: break-word;
+    }
 
-    /* ===== FOOTER ===== */
-    footer { background: #0F2340; color: rgba(255,255,255,0.75); padding: 60px 5% 30px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-brand img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--vert); margin-bottom: 14px; }
-    .footer-brand p { font-size: 0.85rem; line-height: 1.7; max-width: 240px; margin-bottom: 16px; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; margin-bottom: 8px; }
-    .footer-contact-item span:first-child { color: var(--vert); flex-shrink: 0; }
-    footer h4 { font-family: var(--serif); font-size: 1rem; color: #fff; font-weight: 600; margin-bottom: 18px; }
-    footer ul { list-style: none; }
-    footer ul li { margin-bottom: 10px; }
-    footer ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    footer ul a:hover { color: #7EC8A0; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: border-color 0.2s, color 0.2s, background 0.2s; }
-    .footer-social a:hover { border-color: var(--vert); color: #7EC8A0; background: rgba(46,125,79,0.15); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; font-size: 0.78rem; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 8px; }
-    .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
-    .footer-bottom a:hover { color: #7EC8A0; }
+    /* ===== SHARE BUTTONS ===== */
+    .modal-actions {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      padding-top: 24px; border-top: 1px solid #e5e7eb;
+    }
+    .btn-share {
+      flex: 1; min-width: 120px;
+      padding: 12px 16px; border: none; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; display: flex; align-items: center;
+      justify-content: center; gap: 8px; text-decoration: none;
+    }
+    .btn-whatsapp {
+      background: #25D366; color: #fff;
+    }
+    .btn-whatsapp:hover { background: #1fbb50; transform: translateY(-2px); }
+    .btn-facebook {
+      background: #1877F2; color: #fff;
+    }
+    .btn-facebook:hover { background: #0a66c2; transform: translateY(-2px); }
+    .btn-copy {
+      background: var(--vert-p); color: var(--vert);
+      border: 1.5px solid var(--vert);
+    }
+    .btn-copy:hover { background: var(--vert); color: #fff; transform: translateY(-2px); }
+    .btn-support {
+      background: var(--vert); color: #fff;
+    }
+    .btn-support:hover { background: #246040; transform: translateY(-2px); }
+    .copy-feedback {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: var(--vert); color: #fff;
+      padding: 12px 24px; border-radius: 8px;
+      opacity: 0; transition: opacity 0.3s ease;
+      z-index: 3000;
+    }
+    .copy-feedback.show { opacity: 1; }
 
-    /* ===== REVEAL ===== */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ===== STATE MESSAGES ===== */
+    .state-msg {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      padding: 60px 20px; text-align: center; color: var(--gris-l);
+    }
+    .state-msg span { font-size: 3rem; }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .actu-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .burger { display: flex; }
-      .section-actu { padding: 60px 5%; }
-      .actu-hero-card { height: 340px; }
-      .actu-hero-card .card-content { padding: 24px; }
-      .actu-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 60px 5% 80px; }
+      .page-hero h1 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+      #actu-grid { grid-template-columns: 1fr; }
+      .actu-card .card-img-wrap { height: 180px; }
+      .modal { max-width: 95vw; max-height: 90vh; }
+      .modal-header { height: 240px; }
       .modal-body { padding: 24px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-    }
-    @media (max-width: 480px) {
-      .actu-hero-card { height: 280px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .modal-img { height: 200px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .spinner { animation: none; }
-      .card-rideau { transition: none; }
+      .modal-actions { flex-direction: column; }
+      .btn-share { width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ===== NAV ===== -->
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
-      <img src="logo.jpeg" alt="Logo ONG Sabouyô" />
-      <span>ONG Sabouyô</span>
+      <img src="logo.jpeg" alt="ONG Sabouyô" />
+      <span>Sabouyô</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -342,191 +367,114 @@
       <li><a href="statuts.html">Statuts</a></li>
       <li><a href="equipe.html">Équipe</a></li>
       <li><a href="actualites.html" class="active">Actualités</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="don.html" class="btn-don">Faire un don</a></li>
+      <li><a href="don.html" class="btn-don">Soutenir</a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <button class="burger" id="burger">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobile-menu">
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
     <a href="statuts.html">Statuts</a>
     <a href="equipe.html">Équipe</a>
-    <a href="actualites.html">Actualités</a>
-    <a href="galerie.html">Galerie</a>
-    <a href="contact.html">Contact</a>
-    <a href="don.html" class="btn-don">Faire un don</a>
+    <a href="actualites.html" class="active">Actualités</a>
+    <a href="don.html" class="btn-don">Soutenir</a>
   </div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <div class="page-hero-bg" role="img" aria-label="Actualités ONG Sabouyô"></div>
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <div class="breadcrumb">
         <a href="index.html">Accueil</a>
-        <span>›</span>
+        <span>/</span>
         <span>Actualités</span>
-      </nav>
-      <h1>Nos actions,<br/>nos <em>actualités</em></h1>
-      <p>Restez informés de toutes les initiatives, événements et actions menés par l'ONG Sabouyô sur le terrain à Djougou et dans le département de la Donga.</p>
+      </div>
+      <h1>Nos <em>actualités</em></h1>
+      <p>Découvrez nos dernières actions, événements et initiatives pour la paix, l'égalité et le développement durable au Bénin.</p>
     </div>
-    <div class="page-hero-diagonal" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 L1440,0 L1440,60 Z" fill="#ffffff"/>
+    <div class="page-hero-diagonal">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,50 Q300,0 600,50 T1200,50 L1200,100 L0,100 Z" fill="#FFFFFF" />
       </svg>
     </div>
-  </div>
+  </section>
 
-  <!-- ACTUALITÉS -->
-  <section class="section-actu" aria-labelledby="actu-title">
-    <div class="actu-header reveal">
-      <p class="section-label">Fil d'actualités</p>
-      <h2 class="section-title" id="actu-title">Toutes nos actualités</h2>
+  <!-- ===== SECTION ACTUALITÉS ===== -->
+  <section class="section-actu">
+    <div class="actu-header">
+      <p class="section-label">Suivez nos actions</p>
+      <h2 class="section-title">Actualités & Événements</h2>
       <div class="divider"></div>
     </div>
 
-    <!-- FILTRES -->
-    <div class="filtres-wrap" id="filtres-wrap" role="group" aria-label="Filtrer par catégorie">
-      <div class="loader-wrap" style="padding:10px 0;">
-        <div class="spinner" style="width:24px;height:24px;border-width:2px;"></div>
-      </div>
+    <!-- Filtres -->
+    <div id="filtres-wrap" class="filtres-wrap"></div>
+
+    <!-- Loader -->
+    <div id="actu-loader" class="loader-wrap">
+      <div class="spinner"></div>
+      <p>Chargement des actualités…</p>
     </div>
 
-    <!-- CONTENU -->
-    <div id="actu-loader" class="loader-wrap" aria-live="polite">
-      <div class="spinner"></div>
-      <span>Chargement des actualités…</span>
-    </div>
+    <!-- Hero Card -->
     <div id="actu-hero-wrap"></div>
-    <div class="actu-grid" id="actu-grid" style="display:none;"></div>
+
+    <!-- Grille -->
+    <div id="actu-grid"></div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="logo.jpeg" alt="ONG Sabouyô — Paix, Environnement, Développement, Bénin" />
-        <p>Promouvoir la paix, l'égalité et le développement durable dans les départements au Bénin.</p>
-        <div class="footer-contact-item"><span>📍</span><span>Quartier Baparape, Arrondissement III, Djougou, Donga</span></div>
-        <div class="footer-contact-item"><span>📞</span><span>97 91 77 77 &nbsp;/&nbsp; 96 75 57 05</span></div>
-        <div class="footer-contact-item"><span>✉️</span><span>ongsabouyo@yahoo.com</span></div>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/people/Sabouy%C3%B4-Ong/61555397842797/" target="_blank" rel="noopener noreferrer" aria-label="Facebook ONG Sabouyô">f</a>
-        </div>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="apropos.html">À propos</a></li>
-          <li><a href="statuts.html">Statuts légaux</a></li>
-          <li><a href="equipe.html">Notre équipe</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="galerie.html">Galerie</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Documents officiels</h4>
-        <ul>
-          <li><a href="Statut_de_l_ONG_SABOUYÔ_.pdf" target="_blank" rel="noopener">Statuts de l'ONG</a></li>
-          <li><a href="ONG_SABOUYO_REGLEMENT_INTERIEUR.pdf" target="_blank" rel="noopener">Règlement intérieur</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Agir</h4>
-        <ul>
-          <li><a href="don.html">Faire un don</a></li>
-          <li><a href="contact.html">Nous contacter</a></li>
-          <li><a href="contact.html">Devenir partenaire</a></li>
-          <li><a href="contact.html">Adhérer à l'ONG</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 ONG Sabouyô — sabouyo.org. Tous droits réservés.</span>
-      <span>Site réalisé par <a href="https://wa.me/2290191175358?text=Bonjour%20DineTech%2C%20j%27ai%20visit%C3%A9%20le%20site%20de%20l%27ONG%20Sabouy%C3%B4%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20web%20pour%20mon%20organisation.%20Pouvez-vous%20me%20contacter%20%3F" target="_blank" rel="noopener noreferrer">DineTech</a> · Djougou, Bénin</span>
-    </div>
-  </footer>
-
-  <!-- MODAL -->
-  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-titre">
-    <div class="modal" id="modal">
-      <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
-      <div class="modal-img" id="modal-img"></div>
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-header" id="modal-img"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-body">
-        <p class="modal-date" id="modal-date"></p>
-        <h2 class="modal-title" id="modal-titre"></h2>
-        <div class="modal-divider"></div>
-        <p class="modal-contenu" id="modal-contenu"></p>
+        <div class="modal-meta">
+          <span class="modal-cat" id="modal-cat"></span>
+          <span class="modal-date" id="modal-date"></span>
+        </div>
+        <h2 id="modal-titre"></h2>
+        <p class="modal-texte" id="modal-texte"></p>
+        <div class="modal-actions">
+          <a class="btn-share btn-whatsapp" id="btn-whatsapp" target="_blank" rel="noopener">
+            📱 WhatsApp
+          </a>
+          <a class="btn-share btn-facebook" id="btn-facebook" target="_blank" rel="noopener">
+            f Facebook
+          </a>
+          <button class="btn-share btn-copy" onclick="copyUrl()">
+            🔗 Copier lien
+          </button>
+          <a class="btn-share btn-support" href="don.html">
+            💚 Soutenir
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="copy-feedback" id="copy-feedback">✓ Lien copié !</div>
+
   <script>
-    // ===== NAV =====
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-    const burger = document.getElementById('burger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    burger.addEventListener('click', () => {
-      const o = burger.classList.toggle('open');
-      mobileMenu.classList.toggle('open', o);
-      burger.setAttribute('aria-expanded', o);
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      burger.classList.remove('open'); mobileMenu.classList.remove('open'); burger.setAttribute('aria-expanded', false);
-    }));
+    // ===== VARS GLOBALES =====
+    let allArticles = [];
+    let currentArticle = null;
+    const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6XLcj8iu1iy58ZRi0qrlDuqrX6sT67gtdzHAKTomQ-p7Kg7Sfnowwuc7NgAhAj45Wzo6T-vVvI5jJ/pub?gid=2141550801&single=true&output=csv';
 
-    // ===== REVEAL =====
-    const revealEls = document.querySelectorAll('.reveal');
-    new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); } });
-    }, { threshold: 0.12 }).observe(revealEls[0]);
-    revealEls.forEach(el => new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 }).observe(el));
-
-    // ===== MODAL =====
-    const backdrop = document.getElementById('modal-backdrop');
-    const modalClose = document.getElementById('modal-close');
-    function openModal(art) {
-      const imgEl = document.getElementById('modal-img');
-      imgEl.innerHTML = art.image
-        ? `<img src="${art.image}" alt="${art.titre}" /><div class="modal-img-overlay"></div><span class="modal-cat-badge">${art.categorie}</span>`
-        : `<div class="modal-img-placeholder">${catIcon(art.categorie)}</div><span class="modal-cat-badge">${art.categorie}</span>`;
-      document.getElementById('modal-date').textContent = formatDate(art.date);
-      document.getElementById('modal-titre').textContent = art.titre;
-      document.getElementById('modal-contenu').textContent = art.contenu;
-      backdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() { backdrop.classList.remove('open'); document.body.style.overflow = ''; }
-    modalClose.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    // ===== UTILS =====
-    function formatDate(str) {
-      if (!str) return '';
-      const d = new Date(str);
-      if (isNaN(d)) return str;
+    // ===== HELPERS =====
+    function formatDate(dateStr) {
+      const d = new Date(dateStr);
       return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
-    function catIcon(cat) {
-      const c = (cat || '').toLowerCase();
-      if (c.includes('paix') || c.includes('cohésion')) return '☮️';
-      if (c.includes('genre') || c.includes('femme')) return '♀️';
-      if (c.includes('environnement') || c.includes('vert')) return '🌿';
-      if (c.includes('gouvernance') || c.includes('démocratie')) return '🏛️';
-      if (c.includes('événement') || c.includes('event')) return '📅';
-      return '📣';
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
     }
 
     // ===== CSV PARSER =====
@@ -550,20 +498,20 @@
     // ===== HERO CARD =====
     function buildHeroCard(art) {
       const div = document.createElement('div');
-      div.className = 'actu-hero-card reveal' + (art.image ? '' : ' no-img');
+      div.className = 'actu-hero-card reveal';
       div.setAttribute('role', 'article');
       div.setAttribute('tabindex', '0');
       div.setAttribute('aria-label', art.titre);
       div.innerHTML = `
-        <div class="card-bg" style="${art.image ? `background-image:url('${art.image}')` : ''}"></div>
+        <div class="card-bg" style="${art.image ? `background-image:url('${escapeHTML(art.image)}')` : ''}"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
           <div class="card-meta">
-            <span class="card-cat">${art.categorie || 'Actualité'}</span>
+            <span class="card-cat">${escapeHTML(art.categorie || 'Actualité')}</span>
             <span class="card-date">${formatDate(art.date)}</span>
           </div>
-          <h2>${art.titre}</h2>
-          <p class="card-texte">${art.contenu}</p>
+          <h2>${escapeHTML(art.titre)}</h2>
+          <p class="card-texte">${escapeHTML(art.contenu)}</p>
         </div>`;
       div.addEventListener('click', () => openModal(art));
       div.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(art); });
@@ -580,16 +528,16 @@
       div.innerHTML = `
         <div class="card-img-wrap">
           ${art.image
-            ? `<img src="${art.image}" alt="${art.titre}" loading="lazy" />`
-            : `<div class="img-placeholder">${catIcon(art.categorie)}</div>`}
-          <div class="card-rideau"><p class="rideau-texte">${art.contenu}</p></div>
+            ? `<img src="${escapeHTML(art.image)}" alt="${escapeHTML(art.titre)}" loading="lazy" />`
+            : `<div class="img-placeholder">📰</div>`}
+          <div class="card-rideau"><p class="rideau-texte">${escapeHTML(art.contenu)}</p></div>
         </div>
         <div class="card-body">
           <div class="card-meta-sm">
-            <span class="card-cat-sm">${art.categorie || 'Actualité'}</span>
+            <span class="card-cat-sm">${escapeHTML(art.categorie || 'Actualité')}</span>
             <span class="card-date-sm">${formatDate(art.date)}</span>
           </div>
-          <h3>${art.titre}</h3>
+          <h3>${escapeHTML(art.titre)}</h3>
         </div>`;
       div.addEventListener('click', () => openModal(art));
       div.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(art); });
@@ -605,7 +553,7 @@
         const count = cat === 'Tout' ? articles.length : articles.filter(a => a.categorie === cat).length;
         const btn = document.createElement('button');
         btn.className = 'filtre-btn' + (cat === 'Tout' ? ' active' : '');
-        btn.innerHTML = `${cat} <span class="filtre-count">${count}</span>`;
+        btn.innerHTML = `${escapeHTML(cat)} <span class="filtre-count">${count}</span>`;
         btn.addEventListener('click', () => {
           wrap.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
@@ -624,18 +572,17 @@
 
       if (articles.length === 0) {
         grid.style.display = 'block';
-        grid.innerHTML = `<div class="state-msg"><span>🔍</span><p>Aucune actualité dans cette catégorie pour le moment.</p></div>`;
+        grid.innerHTML = `<div class="state-msg"><span>🔍</span><p>Aucune actualité dans cette catégorie.</p></div>`;
         return;
       }
 
-      // Tri par date décroissante
       const sorted = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      // 1ère carte = héro
+      // Hero
       heroWrap.appendChild(buildHeroCard(sorted[0]));
       setTimeout(() => heroWrap.querySelector('.reveal')?.classList.add('visible'), 100);
 
-      // Reste = grille
+      // Grille
       if (sorted.length > 1) {
         grid.style.display = 'grid';
         sorted.slice(1).forEach((art, i) => {
@@ -656,25 +603,77 @@
       }
     }
 
-    // ===== FETCH CSV =====
-    const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6XLcj8iu1iy58ZRi0qrlDuqrX6sT67gtdzHAKTomQ-p7Kg7Sfnowwuc7NgAhAj45Wzo6T-vVvI5jJ/pub?gid=2141550801&single=true&output=csv';
+    // ===== MODAL =====
+    function openModal(art) {
+      currentArticle = art;
+      document.getElementById('modal-img').style.backgroundImage = `url('${escapeHTML(art.image || 'logo.jpeg')}')`;
+      document.getElementById('modal-cat').textContent = escapeHTML(art.categorie || 'Actualité');
+      document.getElementById('modal-date').textContent = formatDate(art.date);
+      document.getElementById('modal-titre').textContent = escapeHTML(art.titre);
+      document.getElementById('modal-texte').textContent = escapeHTML(art.contenu);
 
+      const shareUrl = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(art.titre)}`;
+      const text = `${art.titre} — ${shareUrl}`;
+
+      document.getElementById('btn-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      document.getElementById('btn-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+      document.getElementById('modal-overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function copyUrl() {
+      const shareUrl = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(currentArticle?.titre || '')}`;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        const feedback = document.getElementById('copy-feedback');
+        feedback.classList.add('show');
+        setTimeout(() => feedback.classList.remove('show'), 2000);
+      });
+    }
+
+    // ===== EVENTS =====
+    document.getElementById('modal-overlay').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    document.getElementById('burger').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+      document.getElementById('burger').classList.toggle('open');
+    });
+
+    // ===== LOAD =====
     async function loadActualites() {
       try {
         const res = await fetch(CSV_URL);
         if (!res.ok) throw new Error();
         const text = await res.text();
-        const articles = parseCSV(text);
+        allArticles = parseCSV(text);
         document.getElementById('actu-loader').style.display = 'none';
-        buildFiltres(articles);
-        renderArticles(articles);
+        buildFiltres(allArticles);
+        renderArticles(allArticles);
       } catch {
-        document.getElementById('actu-loader').innerHTML = `<span style="font-size:2rem;">⚠️</span><p style="color:#c0392b;margin-top:8px;">Impossible de charger les actualités. Réessayez plus tard.</p>`;
-        document.getElementById('filtres-wrap').innerHTML = '';
+        document.getElementById('actu-loader').innerHTML = `<div class="state-msg"><span>⚠️</span><p style="color:#c62828;">Impossible de charger les actualités. Réessayez plus tard.</p></div>`;
       }
     }
 
     loadActualites();
   </script>
+
 </body>
 </html>
