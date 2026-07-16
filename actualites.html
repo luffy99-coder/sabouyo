@@ -4,67 +4,98 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ===== SEO ===== -->
-  <title>Actualités | ONG Sabouyô — Nos actions sur le terrain au Bénin</title>
-  <meta name="description" content="Suivez toutes les actualités de l'ONG Sabouyô : événements, actions terrain, sensibilisations et projets pour la paix, l'égalité et le développement durable à Djougou, Bénin." />
-  <meta name="keywords" content="actualités ONG Sabouyô, news ONG Bénin, événements ONG Djougou, actions terrain paix Bénin, sensibilisation genre Donga, sabouyo.org actualités" />
+  <!-- ===== SEO PRIMAIRE ===== -->
+  <title>Actualités | ONG Sabouyô — Nos actions, événements et initiatives au Bénin</title>
+  <meta name="description" content="Suivez les actualités de l'ONG Sabouyô : événements, actions terrain, sensibilisations et projets pour la paix, l'égalité et le développement durable à Djougou, Bénin." />
+  <meta name="keywords" content="actualités ONG Sabouyô, news ONG Bénin, événements ONG Djougou, actions terrain paix Bénin, sensibilisation genre Donga, sabouyo.org actualités, ONG Benin news, NGO West Africa events" />
   <meta name="author" content="ONG Sabouyô" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://sabouyo.org/actualites.html" />
+
+  <!-- ===== OPEN GRAPH ===== -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sabouyo.org/actualites.html" />
   <meta property="og:site_name" content="ONG Sabouyô" />
-  <meta property="og:title" content="Actualités | ONG Sabouyô — Nos actions sur le terrain au Bénin" />
-  <meta property="og:description" content="Suivez les actions et événements de l'ONG Sabouyô pour la paix, l'égalité et le développement durable à Djougou, Bénin." />
+  <meta property="og:title" content="Actualités | ONG Sabouyô — Nos actions et initiatives au Bénin" />
+  <meta property="og:description" content="Suivez toutes les actualités, événements et actions de l'ONG Sabouyô pour la paix, l'égalité et le développement durable à Djougou, Bénin." />
   <meta property="og:image" content="https://sabouyo.org/hero.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="fr_FR" />
+
+  <!-- ===== TWITTER CARD ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Actualités | ONG Sabouyô" />
+  <meta name="twitter:description" content="Suivez les actualités et initiatives de l'ONG Sabouyô pour la paix et le développement durable au Bénin." />
   <meta name="twitter:image" content="https://sabouyo.org/hero.jpeg" />
 
+  <!-- ===== JSON-LD SCHEMA ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Actualités ONG Sabouyô",
     "url": "https://sabouyo.org/actualites.html",
-    "publisher": { "@type": "NGO", "name": "ONG Sabouyô", "url": "https://sabouyo.org" }
+    "description": "Blog des actualités et événements de l'ONG Sabouyô, organisation béninoise pour la paix, l'égalité et le développement durable.",
+    "publisher": {
+      "@type": "NGO",
+      "name": "ONG Sabouyô",
+      "url": "https://sabouyo.org",
+      "logo": "https://sabouyo.org/logo.jpeg"
+    }
   }
   </script>
 
+  <!-- ===== FAVICON & THEME ===== -->
   <link rel="icon" type="image/jpeg" href="favicon.jpeg" />
   <meta name="theme-color" content="#1B3A5C" />
+
+  <!-- ===== FONTS ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: #333; background: #F5F7F2; overflow-x: hidden; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333333;
+      background: #F5F7F2;
+      overflow-x: hidden;
+    }
     :root {
       --bleu:   #1B3A5C;
       --vert:   #2E7D4F;
       --vert-p: #E8F0E9;
       --blanc:  #FFFFFF;
       --fond:   #F5F7F2;
+      --gris:   #333333;
       --gris-l: #6B7280;
       --serif:  'Playfair Display', Georgia, serif;
+      --sans:   'Inter', sans-serif;
       --ombre:  0 4px 24px rgba(27,58,92,0.10);
     }
 
     /* ===== NAV ===== */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(27,58,92,0.97); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 70px; transition: box-shadow 0.3s; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(27,58,92,0.97);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 70px;
+      transition: box-shadow 0.3s;
+    }
     nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.25); }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--vert); }
-    .nav-logo span { font-family: var(--serif); font-size: 1.15rem; color: #fff; font-weight: 700; }
+    .nav-logo span { font-family: var(--serif); font-size: 1.15rem; color: #fff; font-weight: 700; letter-spacing: 0.02em; }
     .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
     .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.875rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
     .nav-links a.active { color: #7EC8A0; }
-    .btn-don { background: var(--vert) !important; color: #fff !important; padding: 8px 20px !important; border-radius: 6px !important; font-weight: 600 !important; }
-    .btn-don:hover { background: #246040 !important; }
+    .btn-don { background: var(--vert) !important; color: #fff !important; padding: 8px 20px !important; border-radius: 6px !important; font-weight: 600 !important; transition: background 0.2s, transform 0.15s !important; }
+    .btn-don:hover { background: #246040 !important; transform: translateY(-1px); }
     .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
     .burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
     .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -74,12 +105,30 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1rem; font-weight: 500; padding: 12px 16px; border-radius: 6px; transition: background 0.2s; }
     .mobile-menu a:hover { background: rgba(255,255,255,0.1); color: #fff; }
-    .mobile-menu .btn-don { background: var(--vert) !important; color: #fff !important; text-align: center; margin-top: 8px; }
+    .mobile-menu .btn-don { background: var(--vert) !important; color: #fff !important; text-align: center; margin-top: 8px; font-weight: 600 !important; }
 
-    /* ===== PAGE HERO ===== */
-    .page-hero { margin-top: 70px; position: relative; padding: 100px 5% 110px; overflow: hidden; }
-    .page-hero-bg { position: absolute; inset: 0; background: url('hero.jpeg') center/cover no-repeat; }
-    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(27,58,92,0.93) 0%, rgba(27,58,92,0.80) 60%, rgba(46,125,79,0.70) 100%); }
+    /* ===== PAGE HERO (banner interne) ===== */
+    .page-hero {
+      margin-top: 70px;
+      position: relative;
+      padding: 100px 5% 110px;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero.jpeg') center/cover no-repeat;
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(27,58,92,0.92) 0%,
+        rgba(27,58,92,0.78) 60%,
+        rgba(46,125,79,0.70) 100%
+      );
+    }
     .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
@@ -88,25 +137,28 @@
     .page-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 20px; }
     .page-hero h1 em { font-style: normal; color: #7EC8A0; }
     .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.75; max-width: 580px; }
-    .page-hero-diagonal { position: absolute; bottom: -2px; left: 0; right: 0; line-height: 0; z-index: 3; }
+    .page-hero-diagonal { position: absolute; bottom: -2px; left: 0; right: 0; z-index: 3; line-height: 0; }
     .page-hero-diagonal svg { width: 100%; }
 
-    /* ===== SECTION ACTU ===== */
-    .section-actu { background: var(--blanc); padding: 80px 5%; }
-    .actu-header { margin-bottom: 48px; }
+    /* ===== SECTIONS ===== */
+    section { padding: 80px 5%; }
     .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vert); margin-bottom: 10px; }
     .section-title { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; color: var(--bleu); line-height: 1.2; margin-bottom: 16px; }
-    .divider { width: 48px; height: 3px; background: linear-gradient(to right, var(--vert), var(--bleu)); border-radius: 2px; margin: 16px 0 32px; }
+    .section-sub { font-size: 1rem; color: var(--gris-l); line-height: 1.75; max-width: 640px; }
+    .divider { width: 48px; height: 3px; background: linear-gradient(to right, var(--vert), var(--bleu)); border-radius: 2px; margin: 16px 0 36px; }
+
+    /* ===== SECTION ACTUALITÉS ===== */
+    .section-actualites { background: var(--blanc); }
 
     /* ===== FILTRES ===== */
-    .filtres-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; align-items: center; }
+    .filtres-wrap { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; align-items: center; }
     .filtre-btn {
-      display: inline-flex; align-items: center; gap: 7px;
+      display: inline-flex; align-items: center; gap: 8px;
       padding: 9px 18px; border-radius: 30px;
-      border: 2px solid #dde4ec;
+      border: 2px solid #D1E5D8;
       background: var(--blanc); color: var(--bleu);
       font-size: 0.82rem; font-weight: 600; cursor: pointer;
-      transition: all 0.22s; user-select: none;
+      transition: all 0.22s ease; user-select: none;
     }
     .filtre-btn:hover { border-color: var(--vert); color: var(--vert); }
     .filtre-btn.active { background: var(--vert); border-color: var(--vert); color: #fff; }
@@ -118,15 +170,15 @@
     .filtre-btn:not(.active) .filtre-count { background: var(--vert-p); color: var(--bleu); }
 
     /* ===== LOADER ===== */
-    .loader-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 80px 0; color: var(--gris-l); }
+    .loader-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 80px 20px; color: var(--gris-l); }
     .spinner { width: 40px; height: 40px; border: 3px solid var(--vert-p); border-top-color: var(--vert); border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ===== HERO ACTU (1ère carte) ===== */
+    /* ===== HERO CARD (1ère actualité) ===== */
     .actu-hero-card {
-      position: relative; border-radius: 18px; overflow: hidden;
-      height: 480px; margin-bottom: 32px;
-      box-shadow: 0 8px 40px rgba(27,58,92,0.18);
+      position: relative; border-radius: 14px; overflow: hidden;
+      height: 480px; margin-bottom: 40px;
+      box-shadow: var(--ombre);
       cursor: pointer;
     }
     .actu-hero-card .card-bg {
@@ -137,47 +189,46 @@
     .actu-hero-card:hover .card-bg { transform: scale(1.04); }
     .actu-hero-card .card-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(15,35,64,0.95) 0%, rgba(15,35,64,0.4) 55%, transparent 100%);
+      background: linear-gradient(to top, rgba(15,35,64,0.94) 0%, rgba(15,35,64,0.50) 55%, transparent 100%);
     }
     .actu-hero-card .card-content {
       position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 36px 40px;
-      transform: translateY(0); transition: transform 0.35s ease;
+      padding: 40px;
     }
-    .actu-hero-card .card-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .actu-hero-card .card-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
     .actu-hero-card .card-cat {
       background: var(--vert); color: #fff;
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      padding: 5px 11px; border-radius: 20px;
+      padding: 6px 12px; border-radius: 20px;
     }
     .actu-hero-card .card-date {
       font-size: 0.78rem; color: rgba(255,255,255,0.75); font-weight: 500;
     }
     .actu-hero-card h2 { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); color: #fff; font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
-    .actu-hero-card .card-texte { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 0; }
-    .actu-hero-card.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2,0.8,0.2,1), transform 0.7s cubic-bezier(0.2,0.8,0.2,1); }
+    .actu-hero-card .card-texte { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+    .actu-hero-card.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .actu-hero-card.reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== GRILLE ACTU ===== */
+    /* ===== GRILLE CARDS ===== */
     #actu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 28px;
-      margin-bottom: 60px;
+      margin-bottom: 0;
     }
 
     /* ===== CARD STANDARD ===== */
     .actu-card {
-      border-radius: 14px; overflow: hidden;
+      border-radius: 12px; overflow: hidden;
       background: var(--blanc);
-      box-shadow: 0 2px 12px rgba(27,58,92,0.08);
+      box-shadow: var(--ombre);
       transition: all 0.35s cubic-bezier(0.2,0.8,0.2,1);
       cursor: pointer;
       display: flex; flex-direction: column;
     }
     .actu-card:hover {
-      box-shadow: 0 12px 32px rgba(27,58,92,0.15);
-      transform: translateY(-6px);
+      box-shadow: 0 8px 36px rgba(27,58,92,0.15);
+      transform: translateY(-4px);
     }
     .actu-card .card-img-wrap {
       position: relative;
@@ -236,12 +287,12 @@
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
       z-index: 2000; opacity: 0; transition: opacity 0.3s ease;
+      align-items: center; justify-content: center; padding: 20px;
     }
     .modal-overlay.active { display: flex; opacity: 1; }
-    .modal-overlay { align-items: center; justify-content: center; padding: 20px; }
     .modal {
       background: var(--blanc);
-      border-radius: 20px; max-width: 700px;
+      border-radius: 16px; max-width: 720px;
       width: 100%; max-height: 85vh; overflow-y: auto;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
       opacity: 0; transform: scale(0.92);
@@ -249,7 +300,7 @@
     }
     .modal-overlay.active .modal { opacity: 1; transform: scale(1); }
     .modal-header {
-      position: relative; height: 320px;
+      position: relative; height: 300px;
       background: center/cover no-repeat;
       overflow: hidden;
     }
@@ -289,44 +340,69 @@
     }
     .modal-texte {
       font-size: 0.95rem; color: #444; line-height: 1.8;
-      margin-bottom: 32px; white-space: pre-wrap; word-break: break-word;
+      margin-bottom: 36px; white-space: pre-wrap; word-break: break-word;
     }
 
-    /* ===== SHARE BUTTONS ===== */
+    /* ===== SHARE BUTTONS - ESTHÉTIQUE ===== */
     .modal-actions {
-      display: flex; gap: 12px; flex-wrap: wrap;
-      padding-top: 24px; border-top: 1px solid #e5e7eb;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding-top: 28px;
+      border-top: 1px solid #E5E7EB;
     }
     .btn-share {
-      flex: 1; min-width: 120px;
-      padding: 12px 16px; border: none; border-radius: 8px;
-      font-size: 0.85rem; font-weight: 600; cursor: pointer;
-      transition: all 0.2s; display: flex; align-items: center;
-      justify-content: center; gap: 8px; text-decoration: none;
+      padding: 14px 18px; border: none; border-radius: 10px;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2,0.8,0.2,1);
+      display: flex; align-items: center;
+      justify-content: center; gap: 10px; text-decoration: none;
+      position: relative; overflow: hidden;
     }
+    .btn-share::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(255,255,255,0.2);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .btn-share:hover::before { transform: translateX(100%); }
+    .btn-share span { position: relative; z-index: 1; }
+
     .btn-whatsapp {
-      background: #25D366; color: #fff;
+      background: linear-gradient(135deg, #25D366 0%, #1fbb50 100%);
+      color: #fff;
     }
-    .btn-whatsapp:hover { background: #1fbb50; transform: translateY(-2px); }
+    .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+
     .btn-facebook {
-      background: #1877F2; color: #fff;
+      background: linear-gradient(135deg, #1877F2 0%, #0a66c2 100%);
+      color: #fff;
     }
-    .btn-facebook:hover { background: #0a66c2; transform: translateY(-2px); }
+    .btn-facebook:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(24,119,242,0.3); }
+
     .btn-copy {
       background: var(--vert-p); color: var(--vert);
-      border: 1.5px solid var(--vert);
+      border: 2px solid var(--vert);
     }
-    .btn-copy:hover { background: var(--vert); color: #fff; transform: translateY(-2px); }
+    .btn-copy:hover { 
+      background: var(--vert); color: #fff;
+      transform: translateY(-2px); box-shadow: 0 8px 20px rgba(46,125,79,0.3);
+    }
+
     .btn-support {
-      background: var(--vert); color: #fff;
+      background: linear-gradient(135deg, var(--vert) 0%, #246040 100%);
+      color: #fff;
     }
-    .btn-support:hover { background: #246040; transform: translateY(-2px); }
+    .btn-support:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(46,125,79,0.3); }
+
+    /* Feedback toast */
     .copy-feedback {
-      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
       background: var(--vert); color: #fff;
-      padding: 12px 24px; border-radius: 8px;
+      padding: 14px 28px; border-radius: 10px;
       opacity: 0; transition: opacity 0.3s ease;
-      z-index: 3000;
+      z-index: 3000; font-weight: 600; font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(46,125,79,0.3);
     }
     .copy-feedback.show { opacity: 1; }
 
@@ -337,19 +413,55 @@
     }
     .state-msg span { font-size: 3rem; }
 
+    /* ===== REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== FOOTER ===== */
+    footer { background: #0F2340; color: rgba(255,255,255,0.75); padding: 60px 5% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--vert); margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; max-width: 240px; margin-bottom: 16px; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; margin-bottom: 8px; }
+    .footer-contact-item span:first-child { color: var(--vert); font-size: 1rem; flex-shrink: 0; }
+    footer h4 { font-family: var(--serif); font-size: 1rem; color: #fff; font-weight: 600; margin-bottom: 18px; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 10px; }
+    footer ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    footer ul a:hover { color: #7EC8A0; }
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .footer-social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+    .footer-social a:hover { border-color: var(--vert); color: #7EC8A0; background: rgba(46,125,79,0.15); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; font-size: 0.78rem; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom a:hover { color: #7EC8A0; }
+
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      #actu-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .modal-actions { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .burger { display: flex; }
-      .page-hero { padding: 60px 5% 80px; }
-      .page-hero h1 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+      section { padding: 60px 5%; }
       #actu-grid { grid-template-columns: 1fr; }
       .actu-card .card-img-wrap { height: 180px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .modal { max-width: 95vw; max-height: 90vh; }
       .modal-header { height: 240px; }
       .modal-body { padding: 24px; }
-      .modal-actions { flex-direction: column; }
-      .btn-share { width: 100%; }
+      .modal-actions { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .filtres-wrap { justify-content: flex-start; }
+      .actu-hero-card { height: 360px; }
+      .actu-hero-card .card-content { padding: 24px; }
+      .modal-header { height: 200px; }
+      .modal-body { padding: 18px; }
+      .btn-share { padding: 12px 14px; font-size: 0.85rem; gap: 6px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -358,8 +470,8 @@
   <!-- ===== NAV ===== -->
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
-      <img src="logo.jpeg" alt="ONG Sabouyô" />
-      <span>Sabouyô</span>
+      <img src="logo.jpeg" alt="Logo ONG Sabouyô" />
+      <span>ONG Sabouyô</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -367,47 +479,52 @@
       <li><a href="statuts.html">Statuts</a></li>
       <li><a href="equipe.html">Équipe</a></li>
       <li><a href="actualites.html" class="active">Actualités</a></li>
-      <li><a href="don.html" class="btn-don">Soutenir</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="don.html" class="btn-don">Faire un don</a></li>
     </ul>
-    <button class="burger" id="burger">
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="mobile-menu" id="mobile-menu">
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
     <a href="statuts.html">Statuts</a>
     <a href="equipe.html">Équipe</a>
     <a href="actualites.html" class="active">Actualités</a>
-    <a href="don.html" class="btn-don">Soutenir</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+    <a href="don.html" class="btn-don">Faire un don</a>
   </div>
 
   <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero">
-    <div class="page-hero-bg"></div>
+  <div class="page-hero">
+    <div class="page-hero-bg" role="img" aria-label="Actualités et actions de l'ONG Sabouyô"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
         <a href="index.html">Accueil</a>
-        <span>/</span>
+        <span>›</span>
         <span>Actualités</span>
-      </div>
+      </nav>
       <h1>Nos <em>actualités</em></h1>
       <p>Découvrez nos dernières actions, événements et initiatives pour la paix, l'égalité et le développement durable au Bénin.</p>
     </div>
-    <div class="page-hero-diagonal">
-      <svg preserveAspectRatio="none" viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,50 Q300,0 600,50 T1200,50 L1200,100 L0,100 Z" fill="#FFFFFF" />
+    <div class="page-hero-diagonal" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 L1440,0 L1440,60 Z" fill="#ffffff"/>
       </svg>
     </div>
-  </section>
+  </div>
 
   <!-- ===== SECTION ACTUALITÉS ===== -->
-  <section class="section-actu">
-    <div class="actu-header">
+  <section class="section-actualites" aria-labelledby="actu-title">
+    <div class="reveal">
       <p class="section-label">Suivez nos actions</p>
-      <h2 class="section-title">Actualités & Événements</h2>
+      <h2 class="section-title" id="actu-title">Actualités &amp; Événements</h2>
       <div class="divider"></div>
     </div>
 
@@ -431,7 +548,7 @@
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal">
       <div class="modal-header" id="modal-img"></div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <button class="modal-close" onclick="closeModal()" aria-label="Fermer">✕</button>
       <div class="modal-body">
         <div class="modal-meta">
           <span class="modal-cat" id="modal-cat"></span>
@@ -441,16 +558,20 @@
         <p class="modal-texte" id="modal-texte"></p>
         <div class="modal-actions">
           <a class="btn-share btn-whatsapp" id="btn-whatsapp" target="_blank" rel="noopener">
-            📱 WhatsApp
+            <span>📱</span>
+            <span>WhatsApp</span>
           </a>
           <a class="btn-share btn-facebook" id="btn-facebook" target="_blank" rel="noopener">
-            f Facebook
+            <span>f</span>
+            <span>Facebook</span>
           </a>
-          <button class="btn-share btn-copy" onclick="copyUrl()">
-            🔗 Copier lien
+          <button class="btn-share btn-copy" onclick="copyUrl()" aria-label="Copier le lien">
+            <span>🔗</span>
+            <span>Copier lien</span>
           </button>
-          <a class="btn-share btn-support" href="don.html">
-            💚 Soutenir
+          <a class="btn-share btn-support" href="don.html" aria-label="Soutenir l'ONG">
+            <span>💚</span>
+            <span>Soutenir</span>
           </a>
         </div>
       </div>
@@ -511,7 +632,7 @@
             <span class="card-date">${formatDate(art.date)}</span>
           </div>
           <h2>${escapeHTML(art.titre)}</h2>
-          <p class="card-texte">${escapeHTML(art.contenu)}</p>
+          <p class="card-texte">${escapeHTML(art.contenu.substring(0, 150))}...</p>
         </div>`;
       div.addEventListener('click', () => openModal(art));
       div.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(art); });
@@ -521,7 +642,7 @@
     // ===== CARD STANDARD =====
     function buildCard(art) {
       const div = document.createElement('div');
-      div.className = 'actu-card';
+      div.className = 'actu-card reveal';
       div.setAttribute('role', 'article');
       div.setAttribute('tabindex', '0');
       div.setAttribute('aria-label', art.titre);
@@ -530,7 +651,7 @@
           ${art.image
             ? `<img src="${escapeHTML(art.image)}" alt="${escapeHTML(art.titre)}" loading="lazy" />`
             : `<div class="img-placeholder">📰</div>`}
-          <div class="card-rideau"><p class="rideau-texte">${escapeHTML(art.contenu)}</p></div>
+          <div class="card-rideau"><p class="rideau-texte">${escapeHTML(art.contenu.substring(0, 120))}...</p></div>
         </div>
         <div class="card-body">
           <div class="card-meta-sm">
@@ -553,7 +674,7 @@
         const count = cat === 'Tout' ? articles.length : articles.filter(a => a.categorie === cat).length;
         const btn = document.createElement('button');
         btn.className = 'filtre-btn' + (cat === 'Tout' ? ' active' : '');
-        btn.innerHTML = `${escapeHTML(cat)} <span class="filtre-count">${count}</span>`;
+        btn.innerHTML = `<span>${escapeHTML(cat)}</span> <span class="filtre-count">${count}</span>`;
         btn.addEventListener('click', () => {
           wrap.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
@@ -590,12 +711,12 @@
           grid.appendChild(card);
           setTimeout(() => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(28px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transform = 'translateY(30px)';
             requestAnimationFrame(() => setTimeout(() => {
+              card.classList.add('visible');
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';
-            }, 80 + i * 90));
+            }, 80 + i * 80));
           }, 0);
         });
       } else {
@@ -645,17 +766,40 @@
     });
 
     // Nav scroll
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      nav.classList.toggle('scrolled', window.scrollY > 50);
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      const isOpen = burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
     });
 
-    // Mobile menu
-    document.getElementById('burger').addEventListener('click', () => {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('open');
-      document.getElementById('burger').classList.toggle('open');
+    // Fermer menu mobile au clic sur un lien
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+      });
     });
+
+    // Reveal au scroll (IntersectionObserver)
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
 
     // ===== LOAD =====
     async function loadActualites() {
