@@ -6,8 +6,8 @@
 
   <!-- ===== SEO PRIMAIRE ===== -->
   <title>Galerie | ONG Sabouyô — Photos et vidéos de nos actions au Bénin</title>
-  <meta name="description" content="Découvrez la galerie photos et vidéos de l'ONG Sabouyô : images de nos actions, événements et initiatives pour la paix, l'égalité et le développement durable à Djougou, Bénin." />
-  <meta name="keywords" content="galerie ONG Sabouyô, photos ONG Bénin, vidéos ONG Djougou, images actions paix, événements ONG photos, sabouyo.org galerie, NGO Benin gallery" />
+  <meta name="description" content="Découvrez la galerie photos de l'ONG Sabouyô : albums de nos actions, événements et initiatives pour la paix, l'égalité et le développement durable à Djougou, Bénin." />
+  <meta name="keywords" content="galerie ONG Sabouyô, photos ONG Bénin, albums ONG Djougou, images actions paix, événements ONG photos, sabouyo.org galerie, NGO Benin gallery" />
   <meta name="author" content="ONG Sabouyô" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://sabouyo.org/galerie.html" />
@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://sabouyo.org/galerie.html" />
   <meta property="og:site_name" content="ONG Sabouyô" />
   <meta property="og:title" content="Galerie | ONG Sabouyô — Photos de nos actions au Bénin" />
-  <meta property="og:description" content="Découvrez les photos et vidéos des actions de l'ONG Sabouyô pour la paix et le développement durable à Djougou, Bénin." />
+  <meta property="og:description" content="Découvrez les albums photos des actions de l'ONG Sabouyô pour la paix et le développement durable à Djougou, Bénin." />
   <meta property="og:image" content="https://sabouyo.org/hero.jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -26,7 +26,7 @@
   <!-- ===== TWITTER CARD ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Galerie | ONG Sabouyô" />
-  <meta name="twitter:description" content="Galerie photos et vidéos des actions de l'ONG Sabouyô au Bénin." />
+  <meta name="twitter:description" content="Galerie photos des actions de l'ONG Sabouyô au Bénin." />
   <meta name="twitter:image" content="https://sabouyo.org/hero.jpeg" />
 
   <!-- ===== JSON-LD SCHEMA ===== -->
@@ -36,7 +36,7 @@
     "@type": "ImageGallery",
     "name": "Galerie ONG Sabouyô",
     "url": "https://sabouyo.org/galerie.html",
-    "description": "Galerie photos et vidéos des actions et événements de l'ONG Sabouyô, organisation béninoise pour la paix et le développement durable.",
+    "description": "Galerie photos des actions et événements de l'ONG Sabouyô, organisation béninoise pour la paix et le développement durable.",
     "publisher": {
       "@type": "NGO",
       "name": "ONG Sabouyô",
@@ -144,7 +144,6 @@
     section { padding: 80px 5%; }
     .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vert); margin-bottom: 10px; }
     .section-title { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; color: var(--bleu); line-height: 1.2; margin-bottom: 16px; }
-    .section-sub { font-size: 1rem; color: var(--gris-l); line-height: 1.75; max-width: 640px; }
     .divider { width: 48px; height: 3px; background: linear-gradient(to right, var(--vert), var(--bleu)); border-radius: 2px; margin: 16px 0 36px; }
 
     /* ===== SECTION GALERIE ===== */
@@ -174,64 +173,100 @@
     .spinner { width: 40px; height: 40px; border: 3px solid var(--vert-p); border-top-color: var(--vert); border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ===== GRILLE IMAGES ===== */
-    #galerie-grid {
+    /* ===== GRILLE ALBUMS ===== */
+    #albums-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
       margin-bottom: 0;
     }
 
-    /* ===== IMAGE CARD ===== */
-    .galerie-card {
-      position: relative;
+    /* ===== ALBUM CARD ===== */
+    .album-card {
       border-radius: 12px;
       overflow: hidden;
       background: var(--blanc);
       box-shadow: var(--ombre);
-      cursor: pointer;
-      aspect-ratio: 1;
       transition: all 0.35s cubic-bezier(0.2,0.8,0.2,1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
-    .galerie-card:hover {
+    .album-card:hover {
       box-shadow: 0 8px 36px rgba(27,58,92,0.15);
       transform: translateY(-4px);
     }
-    .galerie-img {
+    .album-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: var(--vert-p);
+    }
+    .album-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .galerie-card:hover .galerie-img { transform: scale(1.08); }
-    .galerie-overlay {
+    .album-card:hover .album-img { transform: scale(1.08); }
+    .album-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(27,58,92,0.85) 0%, rgba(27,58,92,0.30) 70%, transparent 100%);
+      background: linear-gradient(to top, rgba(27,58,92,0.88) 0%, rgba(27,58,92,0.30) 70%, transparent 100%);
       display: flex;
       align-items: flex-end;
       padding: 20px;
       opacity: 0;
       transition: opacity 0.35s ease;
     }
-    .galerie-card:hover .galerie-overlay { opacity: 1; }
-    .galerie-info {
+    .album-card:hover .album-overlay { opacity: 1; }
+    .album-badge {
       color: #fff;
-      width: 100%;
-    }
-    .galerie-cat {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #7EC8A0;
       margin-bottom: 4px;
     }
-    .galerie-titre {
+    .album-count {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .album-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+    .album-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      flex-wrap: wrap;
+    }
+    .album-cat {
+      background: var(--vert);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .album-date {
+      color: var(--gris-l);
+      font-weight: 500;
+    }
+    .album-titre {
       font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.3;
+      font-size: 1.15rem;
+      color: var(--bleu);
+      font-weight: 700;
+      line-height: 1.35;
       margin: 0;
     }
 
@@ -265,17 +300,17 @@
       transition: opacity 0.35s ease, transform 0.35s ease;
     }
     .lightbox-overlay.active .lightbox { opacity: 1; transform: scale(1); }
-    .lightbox-img-wrap {
+    .lightbox-img-container {
       position: relative;
       width: 100%;
-      height: 400px;
-      background: linear-gradient(135deg, var(--vert-p), rgba(46,125,79,0.08));
+      height: 450px;
+      background: #000;
       overflow: hidden;
     }
     .lightbox-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
     .lightbox-close {
       position: absolute;
@@ -300,32 +335,70 @@
       overflow-y: auto;
       flex-grow: 1;
     }
+    .lightbox-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
     .lightbox-cat {
-      font-size: 0.7rem;
+      background: var(--vert);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--vert);
-      margin-bottom: 8px;
     }
-    .lightbox-titre {
+    .lightbox-date {
+      font-size: 0.85rem;
+      color: var(--gris-l);
+      font-weight: 600;
+    }
+    .lightbox h2 {
       font-family: var(--serif);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: var(--bleu);
       font-weight: 700;
       line-height: 1.3;
-      margin-bottom: 16px;
-    }
-    .lightbox-desc {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.8;
-      margin-bottom: 28px;
-      white-space: pre-wrap;
-      word-break: break-word;
+      margin-bottom: 24px;
     }
 
-    /* ===== SHARE BUTTONS - ESTHÉTIQUE ===== */
+    /* ===== THUMBNAILS ===== */
+    .lightbox-thumbnails {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .lightbox-thumbnail {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .lightbox-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .lightbox-thumbnail:hover {
+      border-color: var(--vert);
+      transform: scale(1.05);
+    }
+    .lightbox-thumbnail.active {
+      border-color: var(--vert);
+      box-shadow: 0 4px 12px rgba(46,125,79,0.3);
+    }
+
+    /* ===== SHARE BUTTONS ===== */
     .lightbox-actions {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -446,28 +519,32 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      #galerie-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+      #albums-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .lightbox-actions { grid-template-columns: 1fr; }
+      .lightbox-img-container { height: 350px; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .burger { display: flex; }
       section { padding: 60px 5%; }
-      #galerie-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+      #albums-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .lightbox { max-width: 95vw; max-height: 90vh; }
-      .lightbox-img-wrap { height: 280px; }
+      .lightbox-img-container { height: 280px; }
       .lightbox-body { padding: 20px; }
       .lightbox-actions { grid-template-columns: 1fr; }
+      .lightbox-thumbnail { width: 80px; height: 80px; }
     }
     @media (max-width: 480px) {
       .filtres-wrap { justify-content: flex-start; }
-      #galerie-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .lightbox-img-wrap { height: 220px; }
+      #albums-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .album-img-wrap { height: 160px; }
+      .lightbox-img-container { height: 220px; }
       .lightbox-body { padding: 16px; }
-      .lightbox-titre { font-size: 1.3rem; }
+      .lightbox h2 { font-size: 1.4rem; }
       .btn-share { padding: 12px 14px; font-size: 0.85rem; gap: 6px; }
+      .lightbox-thumbnail { width: 70px; height: 70px; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
@@ -518,7 +595,7 @@
         <span>Galerie</span>
       </nav>
       <h1>Nos <em>actions</em> en images</h1>
-      <p>Découvrez les photos de nos initiatives, événements et projets pour la paix, l'égalité et le développement durable au Bénin.</p>
+      <p>Découvrez les albums photos de nos initiatives, événements et projets pour la paix, l'égalité et le développement durable au Bénin.</p>
     </div>
     <div class="page-hero-diagonal" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -531,7 +608,7 @@
   <section class="section-galerie" aria-labelledby="galerie-title">
     <div class="reveal">
       <p class="section-label">Voir nos actions</p>
-      <h2 class="section-title" id="galerie-title">Galerie photos &amp; vidéos</h2>
+      <h2 class="section-title" id="galerie-title">Galerie photos</h2>
       <div class="divider"></div>
     </div>
 
@@ -544,21 +621,24 @@
       <p>Chargement de la galerie…</p>
     </div>
 
-    <!-- Grille -->
-    <div id="galerie-grid"></div>
+    <!-- Grille albums -->
+    <div id="albums-grid"></div>
   </section>
 
   <!-- ===== LIGHTBOX MODAL ===== -->
   <div class="lightbox-overlay" id="lightbox-overlay">
     <div class="lightbox">
-      <div class="lightbox-img-wrap">
+      <div class="lightbox-img-container">
         <img id="lightbox-img" src="" alt="" class="lightbox-img" />
       </div>
       <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
       <div class="lightbox-body">
-        <p class="lightbox-cat" id="lightbox-cat"></p>
-        <h2 class="lightbox-titre" id="lightbox-titre"></h2>
-        <p class="lightbox-desc" id="lightbox-desc"></p>
+        <div class="lightbox-meta">
+          <span class="lightbox-cat" id="lightbox-cat"></span>
+          <span class="lightbox-date" id="lightbox-date"></span>
+        </div>
+        <h2 id="lightbox-titre"></h2>
+        <div class="lightbox-thumbnails" id="lightbox-thumbnails"></div>
         <div class="lightbox-actions">
           <a class="btn-share btn-whatsapp" id="btn-whatsapp" target="_blank" rel="noopener">
             <span>📱</span>
@@ -585,8 +665,9 @@
 
   <script>
     // ===== VARS GLOBALES =====
-    let allImages = [];
-    let currentImage = null;
+    let allAlbums = [];
+    let currentAlbum = null;
+    let currentImageIndex = 0;
     const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6XLcj8iu1iy58ZRi0qrlDuqrX6sT67gtdzHAKTomQ-p7Kg7Sfnowwuc7NgAhAj45Wzo6T-vVvI5jJ/pub?gid=2134386451&single=true&output=csv';
 
     // ===== HELPERS =====
@@ -594,6 +675,11 @@
       const div = document.createElement('div');
       div.textContent = str;
       return div.innerHTML;
+    }
+
+    function formatDate(dateStr) {
+      const d = new Date(dateStr);
+      return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
     // ===== CSV PARSER =====
@@ -611,62 +697,93 @@
         const obj = {};
         headers.forEach((h, i) => { obj[h] = (cols[i] || '').replace(/^"|"$/g, '').trim(); });
         return obj;
-      }).filter(r => r.image && r.image.length > 0);
+      }).filter(r => r.titre && r.titre.length > 0 && r.image && r.image.length > 0);
     }
 
-    // ===== BUILD CARDS =====
-    function buildCard(img) {
+    // ===== GROUP BY TITRE (albums) =====
+    function groupByTitre(images) {
+      const grouped = {};
+      images.forEach(img => {
+        if (!grouped[img.titre]) {
+          grouped[img.titre] = {
+            titre: img.titre,
+            date: img.date,
+            categorie: img.categorie,
+            images: []
+          };
+        }
+        grouped[img.titre].images.push(img.image);
+      });
+      return Object.values(grouped);
+    }
+
+    // ===== BUILD ALBUM CARD =====
+    function buildAlbumCard(album) {
       const div = document.createElement('div');
-      div.className = 'galerie-card reveal';
+      div.className = 'album-card reveal';
       div.setAttribute('role', 'article');
       div.setAttribute('tabindex', '0');
-      div.setAttribute('aria-label', img.titre);
+      div.setAttribute('aria-label', album.titre);
+      
+      const firstImg = album.images[0];
       div.innerHTML = `
-        <img src="${escapeHTML(img.image)}" alt="${escapeHTML(img.titre)}" class="galerie-img" loading="lazy" />
-        <div class="galerie-overlay">
-          <div class="galerie-info">
-            <p class="galerie-cat">${escapeHTML(img.categorie || 'Photo')}</p>
-            <h3 class="galerie-titre">${escapeHTML(img.titre)}</h3>
+        <div class="album-img-wrap">
+          <img src="${escapeHTML(firstImg)}" alt="${escapeHTML(album.titre)}" class="album-img" loading="lazy" />
+          <div class="album-overlay">
+            <div>
+              <p class="album-badge">${escapeHTML(album.categorie || 'Photos')}</p>
+              <p class="album-count">${album.images.length} image${album.images.length > 1 ? 's' : ''}</p>
+            </div>
           </div>
+        </div>
+        <div class="album-body">
+          <div class="album-meta">
+            <span class="album-cat">${escapeHTML(album.categorie || 'Photos')}</span>
+            <span class="album-date">${formatDate(album.date)}</span>
+          </div>
+          <h3 class="album-titre">${escapeHTML(album.titre)}</h3>
         </div>`;
-      div.addEventListener('click', () => openLightbox(img));
-      div.addEventListener('keydown', e => { if (e.key === 'Enter') openLightbox(img); });
+      
+      div.addEventListener('click', () => openLightbox(album));
+      div.addEventListener('keydown', e => { if (e.key === 'Enter') openLightbox(album); });
       return div;
     }
 
     // ===== FILTRES =====
-    function buildFiltres(images) {
+    function buildFiltres(albums) {
       const wrap = document.getElementById('filtres-wrap');
       wrap.innerHTML = '';
-      const cats = ['Tout', ...new Set(images.map(i => i.categorie).filter(Boolean))];
+      const cats = ['Tout', ...new Set(albums.map(a => a.categorie).filter(Boolean))];
       cats.forEach(cat => {
-        const count = cat === 'Tout' ? images.length : images.filter(i => i.categorie === cat).length;
+        const count = cat === 'Tout' ? albums.length : albums.filter(a => a.categorie === cat).length;
         const btn = document.createElement('button');
         btn.className = 'filtre-btn' + (cat === 'Tout' ? ' active' : '');
         btn.innerHTML = `<span>${escapeHTML(cat)}</span> <span class="filtre-count">${count}</span>`;
         btn.addEventListener('click', () => {
           wrap.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          renderImages(cat === 'Tout' ? images : images.filter(i => i.categorie === cat));
+          renderAlbums(cat === 'Tout' ? albums : albums.filter(a => a.categorie === cat));
         });
         wrap.appendChild(btn);
       });
     }
 
-    // ===== RENDU IMAGES =====
-    function renderImages(images) {
-      const grid = document.getElementById('galerie-grid');
+    // ===== RENDU ALBUMS =====
+    function renderAlbums(albums) {
+      const grid = document.getElementById('albums-grid');
       grid.innerHTML = '';
 
-      if (images.length === 0) {
+      if (albums.length === 0) {
         grid.style.display = 'block';
-        grid.innerHTML = `<div class="state-msg"><span>🔍</span><p>Aucune image dans cette catégorie.</p></div>`;
+        grid.innerHTML = `<div class="state-msg"><span>🔍</span><p>Aucun album dans cette catégorie.</p></div>`;
         return;
       }
 
+      const sorted = [...albums].sort((a, b) => new Date(b.date) - new Date(a.date));
       grid.style.display = 'grid';
-      images.forEach((img, i) => {
-        const card = buildCard(img);
+      
+      sorted.forEach((album, i) => {
+        const card = buildAlbumCard(album);
         grid.appendChild(card);
         setTimeout(() => {
           card.style.opacity = '0';
@@ -681,16 +798,33 @@
     }
 
     // ===== LIGHTBOX =====
-    function openLightbox(img) {
-      currentImage = img;
-      document.getElementById('lightbox-img').src = escapeHTML(img.image);
-      document.getElementById('lightbox-img').alt = escapeHTML(img.titre);
-      document.getElementById('lightbox-cat').textContent = escapeHTML(img.categorie || 'Photo');
-      document.getElementById('lightbox-titre').textContent = escapeHTML(img.titre);
-      document.getElementById('lightbox-desc').textContent = escapeHTML(img.description);
+    function openLightbox(album) {
+      currentAlbum = album;
+      currentImageIndex = 0;
+      updateLightboxImage();
+      
+      document.getElementById('lightbox-cat').textContent = escapeHTML(album.categorie || 'Photos');
+      document.getElementById('lightbox-date').textContent = formatDate(album.date);
+      document.getElementById('lightbox-titre').textContent = escapeHTML(album.titre);
+      
+      const thumbnailsWrap = document.getElementById('lightbox-thumbnails');
+      thumbnailsWrap.innerHTML = '';
+      
+      album.images.forEach((img, i) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'lightbox-thumbnail' + (i === 0 ? ' active' : '');
+        thumb.innerHTML = `<img src="${escapeHTML(img)}" alt="Image ${i + 1}" loading="lazy" />`;
+        thumb.addEventListener('click', () => {
+          currentImageIndex = i;
+          updateLightboxImage();
+          document.querySelectorAll('.lightbox-thumbnail').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+        });
+        thumbnailsWrap.appendChild(thumb);
+      });
 
-      const shareUrl = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(img.titre)}`;
-      const text = `${img.titre} — ${shareUrl}`;
+      const shareUrl = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(album.titre)}`;
+      const text = `${album.titre} — ${shareUrl}`;
 
       document.getElementById('btn-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(text)}`;
       document.getElementById('btn-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
@@ -699,13 +833,20 @@
       document.body.style.overflow = 'hidden';
     }
 
+    function updateLightboxImage() {
+      if (currentAlbum && currentAlbum.images[currentImageIndex]) {
+        document.getElementById('lightbox-img').src = escapeHTML(currentAlbum.images[currentImageIndex]);
+        document.getElementById('lightbox-img').alt = `Image ${currentImageIndex + 1} de ${escapeHTML(currentAlbum.titre)}`;
+      }
+    }
+
     function closeLightbox() {
       document.getElementById('lightbox-overlay').classList.remove('active');
       document.body.style.overflow = '';
     }
 
     function copyUrl() {
-      const shareUrl = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(currentImage?.titre || '')}`;
+      const shareUrl = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(currentAlbum?.titre || '')}`;
       navigator.clipboard.writeText(shareUrl).then(() => {
         const feedback = document.getElementById('copy-feedback');
         feedback.classList.add('show');
@@ -762,10 +903,11 @@
         const res = await fetch(CSV_URL);
         if (!res.ok) throw new Error();
         const text = await res.text();
-        allImages = parseCSV(text);
+        const images = parseCSV(text);
+        allAlbums = groupByTitre(images);
         document.getElementById('galerie-loader').style.display = 'none';
-        buildFiltres(allImages);
-        renderImages(allImages);
+        buildFiltres(allAlbums);
+        renderAlbums(allAlbums);
       } catch {
         document.getElementById('galerie-loader').innerHTML = `<div class="state-msg"><span>⚠️</span><p style="color:#c62828;">Impossible de charger la galerie. Réessayez plus tard.</p></div>`;
       }
