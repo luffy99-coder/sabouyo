@@ -6,8 +6,8 @@
 
   <!-- ===== SEO PRIMAIRE ===== -->
   <title>Faire un don | ONG Sabouyô — Soutenir nos actions au Bénin</title>
-  <meta name="description" content="Soutenez l'ONG Sabouyô : dons financiers, matériels ou sponsoring pour nos actions en faveur de la paix, l'égalité et le développement durable à Djougou, Bénin. Don sécurisé, transparent et déductible." />
-  <meta name="keywords" content="don ONG Sabouyô, soutenir ONG Bénin, don paix, sponsoring ONG, partenariat ONG Djougou, aide humanitaire Bénin, développement durable Bénin" />
+  <meta name="description" content="Soutenez l'ONG Sabouyô : choisissez un montant, une cause, et envoyez un message officiel pré-rempli via WhatsApp ou email. Don sécurisé, transparent et traçable." />
+  <meta name="keywords" content="don ONG Sabouyô, soutenir ONG Bénin, don paix, développement durable Bénin, WhatsApp don, faire un don transparent" />
   <meta name="author" content="ONG Sabouyô" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://sabouyo.org/don.html" />
@@ -16,8 +16,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sabouyo.org/don.html" />
   <meta property="og:site_name" content="ONG Sabouyô" />
-  <meta property="og:title" content="Faire un don | ONG Sabouyô — Soutenir nos actions au Bénin" />
-  <meta property="og:description" content="Soutenez l'ONG Sabouyô avec un don financier, matériel ou un partenariat. Transparence garantie, impact mesurable pour la paix et le développement." />
+  <meta property="og:title" content="Faire un don | ONG Sabouyô" />
+  <meta property="og:description" content="Choisissez un montant et une cause. Un message officiel est généré automatiquement et peut être envoyé via WhatsApp ou email. Transparence & redevabilité." />
   <meta property="og:image" content="https://sabouyo.org/hero.jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -26,7 +26,7 @@
   <!-- ===== TWITTER CARD ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Faire un don | ONG Sabouyô" />
-  <meta name="twitter:description" content="Soutenez les actions de l'ONG Sabouyô pour la paix et le développement durable au Bénin." />
+  <meta name="twitter:description" content="Don rapide : montant + cause + message officiel généré automatiquement. Envoi via WhatsApp ou email." />
   <meta name="twitter:image" content="https://sabouyo.org/hero.jpeg" />
 
   <!-- ===== JSON-LD SCHEMA ===== -->
@@ -36,7 +36,7 @@
     "@type": "DonateAction",
     "name": "Soutenir l'ONG Sabouyô",
     "url": "https://sabouyo.org/don.html",
-    "description": "Don financier, matériel ou partenariat pour soutenir les actions de l'ONG Sabouyô en faveur de la paix, l'égalité et le développement durable au Bénin.",
+    "description": "Don financier pour soutenir les actions de l'ONG Sabouyô en faveur de la paix, l'égalité et le développement durable au Bénin.",
     "agent": {
       "@type": "NGO",
       "name": "ONG Sabouyô",
@@ -108,27 +108,9 @@
     .mobile-menu .btn-don { background: var(--vert) !important; color: #fff !important; text-align: center; margin-top: 8px; font-weight: 600 !important; }
 
     /* ===== PAGE HERO ===== */
-    .page-hero {
-      margin-top: 70px;
-      position: relative;
-      padding: 100px 5% 110px;
-      overflow: hidden;
-    }
-    .page-hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('hero.jpeg') center/cover no-repeat;
-    }
-    .page-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(27,58,92,0.92) 0%,
-        rgba(27,58,92,0.78) 60%,
-        rgba(46,125,79,0.70) 100%
-      );
-    }
+    .page-hero { margin-top: 70px; position: relative; padding: 100px 5% 110px; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('hero.jpeg') center/cover no-repeat; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(27,58,92,0.93) 0%, rgba(27,58,92,0.80) 60%, rgba(46,125,79,0.70) 100%); }
     .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
@@ -140,233 +122,109 @@
     .page-hero-diagonal { position: absolute; bottom: -2px; left: 0; right: 0; z-index: 3; line-height: 0; }
     .page-hero-diagonal svg { width: 100%; }
 
-    /* ===== SECTIONS ===== */
-    section { padding: 80px 5%; }
+    /* ===== MAIN ===== */
+    main { padding: 60px 5% 40px; max-width: 1200px; margin: 0 auto; }
     .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vert); margin-bottom: 10px; }
     .section-title { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; color: var(--bleu); line-height: 1.2; margin-bottom: 16px; }
-    .divider { width: 48px; height: 3px; background: linear-gradient(to right, var(--vert), var(--bleu)); border-radius: 2px; margin: 16px 0 36px; }
+    .section-sub { font-size: 1rem; color: var(--gris-l); line-height: 1.75; max-width: 640px; margin-bottom: 40px; }
 
-    /* ===== SECTION DON ===== */
-    .section-don { background: var(--blanc); }
+    /* ===== FORMULAIRE ===== */
+    .form-wrapper { background: var(--blanc); border-radius: 12px; padding: 40px; box-shadow: var(--ombre); }
+    
+    .form-step { margin-bottom: 40px; }
+    .form-step h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--bleu); margin-bottom: 20px; }
 
-    /* ===== STATS GRID ===== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-bottom: 60px;
-    }
-    .stat-card {
-      background: linear-gradient(135deg, var(--bleu) 0%, var(--vert) 100%);
-      border-radius: 14px;
-      padding: 32px;
-      color: #fff;
-      text-align: center;
-      box-shadow: var(--ombre);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.65s ease, transform 0.65s ease, transform 0.3s cubic-bezier(0.2,0.8,0.2,1);
-    }
-    .stat-card:hover { transform: translateY(-8px); }
-    .stat-card.visible { opacity: 1; transform: translateY(0); }
-    .stat-num { font-family: var(--serif); font-size: 2.8rem; font-weight: 700; margin-bottom: 8px; }
-    .stat-label { font-size: 0.95rem; font-weight: 600; opacity: 0.95; }
-    .stat-desc { font-size: 0.8rem; opacity: 0.75; margin-top: 8px; }
-
-    /* ===== FORM SECTION ===== */
-    .form-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-      margin-bottom: 60px;
-      align-items: start;
-    }
-
-    /* ===== FORM PANEL ===== */
-    .form-panel {
-      background: var(--blanc);
-      border: 2px solid #E5E7EB;
-      border-radius: 14px;
-      padding: 32px;
-      transition: all 0.3s ease;
-    }
-    .form-panel:hover { border-color: var(--vert); box-shadow: 0 8px 24px rgba(46,125,79,0.12); }
-    .form-panel h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--bleu); font-weight: 700; margin-bottom: 24px; }
-
-    /* ===== CHIPS DONATEURS ===== */
-    .chips-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .chip {
-      padding: 10px 18px;
-      border: 2px solid #D1E5D8;
-      background: var(--blanc);
-      color: var(--bleu);
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      user-select: none;
-    }
-    .chip:hover { border-color: var(--vert); color: var(--vert); }
-    .chip.active { background: var(--vert); border-color: var(--vert); color: #fff; }
-
-    /* ===== MONTANTS ===== */
-    .montants-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+    /* Montants */
+    .montants-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
     .montant-btn {
-      padding: 16px;
-      border: 2px solid #D1E5D8;
-      background: var(--vert-p);
-      color: var(--vert);
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 1rem;
+      padding: 16px 12px;
+      border: 2px solid #e0e0e0;
+      background: var(--blanc);
+      color: var(--gris);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.2s;
     }
-    .montant-btn:hover { border-color: var(--vert); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(46,125,79,0.2); }
+    .montant-btn:hover { border-color: var(--vert); color: var(--vert); }
     .montant-btn.active { background: var(--vert); color: #fff; border-color: var(--vert); }
 
-    /* ===== FORM FIELDS ===== */
-    .form-group {
-      display: grid;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-    .form-group label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--bleu);
-    }
-    .form-group input,
-    .form-group textarea {
-      padding: 12px 16px;
-      border: 2px solid #E5E7EB;
+    .montant-custom-input {
+      padding: 12px 14px;
+      border: 2px solid #e0e0e0;
       border-radius: 8px;
-      font-family: var(--sans);
       font-size: 0.95rem;
-      transition: all 0.2s ease;
+      width: 100%;
+      transition: border-color 0.2s;
     }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--vert);
-      box-shadow: 0 0 0 4px rgba(46,125,79,0.1);
-    }
-    .form-group textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
+    .montant-custom-input:focus { outline: none; border-color: var(--vert); }
 
-    /* ===== ACTION BUTTONS ===== */
-    .action-btns {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 24px;
+    /* Causes */
+    .causes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+    .cause-btn {
+      padding: 14px 16px;
+      border: 2px solid #e0e0e0;
+      background: var(--blanc);
+      color: var(--gris);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
     }
+    .cause-btn:hover { border-color: var(--vert); color: var(--vert); }
+    .cause-btn.active { background: var(--vert); color: #fff; border-color: var(--vert); }
+
+    /* Form fields */
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--gris); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px 14px; border: 2px solid #e0e0e0; border-radius: 6px; font-family: var(--sans); font-size: 0.95rem; color: var(--gris); transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--vert); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    /* Preview */
+    .preview-section { background: #f9f9f9; border-left: 4px solid var(--vert); padding: 20px; border-radius: 6px; margin: 24px 0; }
+    .preview-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gris-l); margin-bottom: 10px; }
+    .preview-box { background: var(--blanc); border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; font-size: 0.85rem; line-height: 1.6; color: var(--gris); font-family: 'Courier New', monospace; white-space: pre-wrap; word-wrap: break-word; max-height: 300px; overflow-y: auto; }
+
+    /* Action buttons */
+    .action-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
     .btn-action {
       padding: 14px 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.2,0.8,0.2,1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      text-decoration: none;
+      transition: all 0.2s;
     }
-    .btn-whatsapp {
-      background: #25D366;
-      color: #fff;
-    }
+    .btn-whatsapp { background: #25D366; color: #fff; }
     .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
-    .btn-email {
-      background: var(--bleu);
-      color: #fff;
-    }
+    .btn-email { background: var(--bleu); color: #fff; }
     .btn-email:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(27,58,92,0.3); }
 
-    /* ===== INFOS PRATIQUES ===== */
-    .infos-pratiques {
-      background: var(--vert-p);
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 60px;
-    }
-    .infos-pratiques h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--bleu); font-weight: 700; margin-bottom: 20px; }
-    .infos-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .info-item {
-      display: flex;
-      gap: 12px;
-    }
-    .info-item span:first-child {
-      font-size: 1.6rem;
-      min-width: 30px;
-    }
-    .info-item p {
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.6;
-    }
-    .info-item strong { color: var(--bleu); }
+    .form-state { font-size: 0.85rem; margin-top: 12px; color: #28a745; font-weight: 500; }
+
+    /* ===== TRANSPARENCE ===== */
+    .transparency-section { background: var(--vert-p); border-radius: 12px; padding: 40px; margin: 60px 0; }
+    .transparency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 32px; }
+    .transparency-card { background: var(--blanc); border-radius: 10px; padding: 24px; text-align: center; box-shadow: var(--ombre); }
+    .transparency-card h4 { font-family: var(--serif); font-size: 1.1rem; color: var(--bleu); font-weight: 700; margin-bottom: 12px; }
+    .transparency-card p { font-size: 0.9rem; color: var(--gris-l); line-height: 1.6; }
 
     /* ===== FAQ ===== */
-    .faq-section {
-      background: var(--blanc);
-      border-radius: 14px;
-      padding: 32px;
-      margin-bottom: 60px;
-    }
-    .faq-section h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--bleu); font-weight: 700; margin-bottom: 24px; }
-    .faq-item {
-      border-bottom: 1px solid #E5E7EB;
-      padding: 20px 0;
-    }
+    .faq-section { background: var(--blanc); border-radius: 12px; padding: 40px; margin-bottom: 60px; }
+    .faq-section h2 { font-family: var(--serif); font-size: 1.8rem; color: var(--bleu); font-weight: 700; margin-bottom: 32px; }
+    .faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
     .faq-item:last-child { border-bottom: none; }
-    .faq-question {
-      font-weight: 700;
-      color: var(--bleu);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      user-select: none;
-      transition: color 0.2s;
-    }
+    .faq-question { font-weight: 700; color: var(--bleu); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; user-select: none; transition: color 0.2s; }
     .faq-question:hover { color: var(--vert); }
-    .faq-toggle { font-size: 1.2rem; transition: transform 0.3s ease; }
+    .faq-toggle { font-size: 1.2rem; transition: transform 0.3s; }
     .faq-item.active .faq-toggle { transform: rotate(180deg); }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-      color: var(--gris-l);
-      font-size: 0.95rem;
-      line-height: 1.75;
-      margin-top: 12px;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-      overflow: visible;
-    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--gris-l); font-size: 0.95rem; line-height: 1.7; margin-top: 12px; }
+    .faq-item.active .faq-answer { max-height: 500px; overflow: visible; }
 
     /* ===== REVEAL ===== */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -378,7 +236,7 @@
     .footer-brand img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--vert); margin-bottom: 14px; }
     .footer-brand p { font-size: 0.85rem; line-height: 1.7; max-width: 240px; margin-bottom: 16px; }
     .footer-contact-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; margin-bottom: 8px; }
-    .footer-contact-item span:first-child { color: var(--vert); font-size: 1rem; flex-shrink: 0; }
+    .footer-contact-item span:first-child { color: var(--vert); flex-shrink: 0; }
     footer h4 { font-family: var(--serif); font-size: 1rem; color: #fff; font-weight: 600; margin-bottom: 18px; }
     footer ul { list-style: none; }
     footer ul li { margin-bottom: 10px; }
@@ -393,22 +251,25 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .form-section { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
+      nav { padding: 0 4%; }
       .nav-links { display: none; }
       .burger { display: flex; }
-      section { padding: 60px 5%; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .form-section { grid-template-columns: 1fr; }
-      .action-btns { grid-template-columns: 1fr; }
+      main { padding: 40px 4% 30px; }
+      .page-hero { padding: 80px 5% 90px; }
+      .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+      .form-wrapper { padding: 24px; }
+      .montants-grid { grid-template-columns: repeat(3, 1fr); }
+      .causes-grid { grid-template-columns: 1fr; }
+      .action-buttons { grid-template-columns: 1fr; }
+      .transparency-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-      .infos-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
-      .montants-grid { grid-template-columns: 1fr; }
-      .stat-num { font-size: 2rem; }
+      .montants-grid { grid-template-columns: repeat(2, 1fr); }
+      .transparency-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
@@ -418,8 +279,8 @@
   <!-- ===== NAV ===== -->
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
-      <img src="logo.jpeg" alt="Logo ONG Sabouyô" />
-      <span>ONG Sabouyô</span>
+      <img src="logo.jpeg" alt="ONG Sabouyô" />
+      <span>Sabouyô</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -429,14 +290,15 @@
       <li><a href="actualites.html">Actualités</a></li>
       <li><a href="galerie.html">Galerie</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="don.html" class="btn-don">Faire un don</a></li>
+      <li><a href="don.html" class="btn-don">Donner</a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </nav>
 
-  <!-- ===== MOBILE MENU ===== -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
@@ -445,12 +307,12 @@
     <a href="actualites.html">Actualités</a>
     <a href="galerie.html">Galerie</a>
     <a href="contact.html">Contact</a>
-    <a href="don.html" class="btn-don">Faire un don</a>
+    <a href="don.html" class="btn-don">Donner</a>
   </div>
 
   <!-- ===== PAGE HERO ===== -->
   <div class="page-hero">
-    <div class="page-hero-bg" role="img" aria-label="Soutenir l'ONG Sabouyô"></div>
+    <div class="page-hero-bg" role="img" aria-label="Soutenez l'ONG Sabouyô"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-inner">
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
@@ -458,8 +320,8 @@
         <span>›</span>
         <span>Faire un don</span>
       </nav>
-      <h1>Soutenir notre <em>mission</em></h1>
-      <p>Chaque don contribue directement à nos actions pour la paix, l'égalité et le développement durable au Bénin. Votre soutien fait la différence sur le terrain.</p>
+      <h1>Faire un <em>don</em></h1>
+      <p>Choisissez un montant et une cause. Le message officiel est généré automatiquement : vous pouvez l'envoyer via WhatsApp (recommandé) ou par email.</p>
     </div>
     <div class="page-hero-diagonal" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -468,201 +330,150 @@
     </div>
   </div>
 
-  <!-- ===== SECTION STATS ===== -->
-  <section class="section-don">
-    <div class="reveal">
-      <p class="section-label">Impact de vos dons</p>
-      <h2 class="section-title">Votre <em>soutien</em> en chiffres</h2>
-      <div class="divider"></div>
-    </div>
+  <!-- ===== MAIN ===== -->
+  <main>
+    
+    <!-- FORMULAIRE -->
+    <p class="section-label">Don sécurisé • Message officiel • Confirmation</p>
+    <h1 class="section-title">Soutenir l'ONG Sabouyô</h1>
+    <p class="section-sub">Votre contribution renforce notre capacité à agir pour la paix, l'égalité et le développement durable dans le département de la Donga et au-delà.</p>
 
-    <div class="stats-grid">
-      <div class="stat-card reveal">
-        <div class="stat-num">1,200+</div>
-        <div class="stat-label">Bénéficiaires directes</div>
-        <div class="stat-desc">Atteints par nos actions</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-num">25+</div>
-        <div class="stat-label">Actions terrain</div>
-        <div class="stat-desc">Réalisées cette année</div>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Transparence</div>
-        <div class="stat-desc">Suivi complet des fonds</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION FORMULAIRE ===== -->
-  <section class="section-don">
-    <div class="reveal">
-      <p class="section-label">Passer à l'action</p>
-      <h2 class="section-title">Comment nous <em>soutenir</em></h2>
-      <div class="divider"></div>
-    </div>
-
-    <div class="form-section">
-      <!-- ===== PANEL 1: Types de don ===== -->
-      <div class="form-panel reveal">
-        <h3>🎯 Type de soutien</h3>
-        <div class="chips-wrap" id="chips-wrap">
-          <button class="chip active" data-type="financier">💰 Don financier</button>
-          <button class="chip" data-type="materiel">📦 Don matériel</button>
-          <button class="chip" data-type="sponsor">🤝 Sponsoring</button>
-          <button class="chip" data-type="partenariat">🏢 Partenariat</button>
-        </div>
-
-        <label style="font-weight: 700; color: var(--bleu); margin-top: 20px; display: block;">💵 Montant (pour don financier)</label>
+    <div class="form-wrapper reveal">
+      
+      <!-- ÉTAPE 1: MONTANT -->
+      <div class="form-step">
+        <h3>1) Montant (XOF)</h3>
         <div class="montants-grid">
-          <button class="montant-btn" data-montant="5000">5 000 XOF</button>
-          <button class="montant-btn" data-montant="10000">10 000 XOF</button>
           <button class="montant-btn" data-montant="25000">25 000 XOF</button>
           <button class="montant-btn" data-montant="50000">50 000 XOF</button>
+          <button class="montant-btn" data-montant="100000">100 000 XOF</button>
+          <button class="montant-btn" data-montant="250000">250 000 XOF</button>
+          <button class="montant-btn" data-montant="500000">500 000 XOF</button>
         </div>
         <div class="form-group">
-          <input type="number" id="montant-custom" placeholder="Montant personnalisé (XOF)" min="0" />
+          <label>Autre montant (XOF)</label>
+          <input type="number" id="montant-custom" placeholder="Entrez un montant..." />
         </div>
       </div>
 
-      <!-- ===== PANEL 2: Formulaire ===== -->
-      <div class="form-panel reveal">
-        <h3>📝 Vos informations</h3>
-
-        <div class="form-group">
-          <label for="donor-name">Nom complet</label>
-          <input type="text" id="donor-name" placeholder="Votre nom" />
-        </div>
-
-        <div class="form-group">
-          <label for="donor-email">Email</label>
-          <input type="email" id="donor-email" placeholder="votre@email.com" />
-        </div>
-
-        <div class="form-group">
-          <label for="donor-phone">Téléphone</label>
-          <input type="tel" id="donor-phone" placeholder="+229 97 91 77 77" />
-        </div>
-
-        <div class="form-group">
-          <label for="donor-message">Message (optionnel)</label>
-          <textarea id="donor-message" placeholder="Partagez vos motivations ou question..."></textarea>
-        </div>
-
-        <div class="action-btns">
-          <button class="btn-action btn-whatsapp" onclick="sendWhatsApp()">
-            <span>📱</span>
-            <span>WhatsApp</span>
-          </button>
-          <button class="btn-action btn-email" onclick="sendEmail()">
-            <span>✉️</span>
-            <span>Email</span>
-          </button>
+      <!-- ÉTAPE 2: CAUSE -->
+      <div class="form-step">
+        <h3>2) Cause à financer</h3>
+        <div class="causes-grid">
+          <button class="cause-btn" data-cause="Don général" data-desc="Priorités terrain">🎯 Don général</button>
+          <button class="cause-btn" data-cause="Paix & Cohésion" data-desc="Actions de paix et dialogue">☮️ Paix & Cohésion</button>
+          <button class="cause-btn" data-cause="Femmes & Égalité" data-desc="Autonomisation des femmes">♀️ Femmes & Égalité</button>
+          <button class="cause-btn" data-cause="Environnement" data-desc="Entrepreneuriat vert">🌿 Environnement</button>
         </div>
       </div>
+
+      <!-- ÉTAPE 3: INFOS -->
+      <div class="form-step">
+        <h3>3) Informations (optionnel)</h3>
+        <div class="form-group">
+          <label>Nom & Prénom</label>
+          <input type="text" id="donor-name" placeholder="Votre nom complet" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="donor-email" placeholder="Votre email (optionnel)" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="donor-message" placeholder="Message optionnel..."></textarea>
+        </div>
+      </div>
+
+      <!-- APERÇU -->
+      <div class="preview-section">
+        <div class="preview-label">📋 Aperçu du message</div>
+        <div class="preview-box" id="previewBox">Préparation du message...</div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="action-buttons">
+        <button class="btn-action btn-whatsapp" id="btnWhatsApp">💬 Envoyer sur WhatsApp</button>
+        <button class="btn-action btn-email" id="btnEmail">📧 Envoyer par email</button>
+      </div>
+
+      <div class="form-state" id="formState"></div>
     </div>
-  </section>
 
-  <!-- ===== SECTION INFOS PRATIQUES ===== -->
-  <section class="section-don">
-    <div class="infos-pratiques reveal">
-      <h3>💡 Infos pratiques</h3>
-      <div class="infos-list">
-        <div class="info-item">
-          <span>🏦</span>
-          <div>
-            <strong>Virement bancaire</strong>
-            <p>Contact: ongsabouyo@yahoo.com pour les coordonnées bancaires.</p>
-          </div>
+    <!-- TRANSPARENCE & REDEVABILITÉ -->
+    <section class="transparency-section reveal">
+      <h2 class="section-title" style="color: var(--bleu); margin-bottom: 32px;">Transparence & redevabilité</h2>
+      <div class="transparency-grid">
+        <div class="transparency-card">
+          <h4>Traçabilité</h4>
+          <p>Chaque don est pris en compte avec le contexte (cause + montant) pour un suivi transparent.</p>
         </div>
-        <div class="info-item">
-          <span>📱</span>
-          <div>
-            <strong>Mobile Money</strong>
-            <p>Mtn Money, Moov Money: +229 97 91 77 77</p>
-          </div>
+        <div class="transparency-card">
+          <h4>Priorité terrain</h4>
+          <p>Les actions sont orientées vers les besoins réels des communautés : paix, égalité, environnement.</p>
         </div>
-        <div class="info-item">
-          <span>📍</span>
-          <div>
-            <strong>Don en main propre</strong>
-            <p>Quartier Baparape, Djougou — Rendez-vous sur demande.</p>
-          </div>
+        <div class="transparency-card">
+          <h4>Impact</h4>
+          <p>Les dons soutiennent des actions concrètes : sensibilisations, appuis et interventions directes.</p>
         </div>
-        <div class="info-item">
-          <span>✅</span>
-          <div>
-            <strong>Transparence garantie</strong>
-            <p>Reçu et suivi des dons. Rapport d'impact annuel publié.</p>
-          </div>
+        <div class="transparency-card">
+          <h4>Dialogue</h4>
+          <p>Vous pouvez demander des précisions : le responsable des dons confirme la procédure et l'affectation.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== SECTION FAQ ===== -->
-  <section class="section-don">
-    <div class="faq-section reveal">
-      <h3>❓ Questions fréquentes</h3>
-
+    <!-- FAQ -->
+    <section class="faq-section reveal">
+      <h2 class="section-title">FAQ — Questions fréquentes</h2>
+      
       <div class="faq-item">
         <div class="faq-question">
-          <span>Mon don est-il déductible des impôts?</span>
+          <span>Comment se déroule le don via WhatsApp ?</span>
           <span class="faq-toggle">▼</span>
         </div>
-        <div class="faq-answer">
-          L'ONG Sabouyô est une organisation à but non lucratif. Selon la législation béninoise, les dons aux ONG peuvent être déductibles sous certaines conditions. Contactez-nous pour obtenir un reçu dûment établi.
-        </div>
+        <div class="faq-answer">Vous choisissez un montant et une cause, puis vous envoyez le message généré via WhatsApp. Le responsable des dons vous confirme le moyen de paiement et la procédure.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>Comment puis-je suivre l'utilisation de mon don?</span>
+          <span>Puis-je faire un don sans indiquer mon nom ?</span>
           <span class="faq-toggle">▼</span>
         </div>
-        <div class="faq-answer">
-          Nous publions un rapport d'impact annuel détaillant l'utilisation de tous les fonds reçus. Vous recevrez également des mises à jour régulières par email sur les projets soutenus par votre don.
-        </div>
+        <div class="faq-answer">Oui. Les champs "Nom", "Email" et "Message" sont optionnels. Le suivi se fait grâce au contexte "cause + montant".</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>Puis-je faire un don régulier ou mensuel?</span>
+          <span>Puis-je envoyer le don par email au lieu de WhatsApp ?</span>
           <span class="faq-toggle">▼</span>
         </div>
-        <div class="faq-answer">
-          Oui! Les dons réguliers nous aident à planifier nos actions. Contactez-nous pour mettre en place un système de prélèvement automatique ou de virements mensuels.
-        </div>
+        <div class="faq-answer">Oui. Vous pouvez cliquer sur "Envoyer par email". WhatsApp reste recommandé pour un suivi plus rapide.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>Pouvez-vous accepter des dons matériels?</span>
+          <span>Comment Sabouyô confirme-t-elle la réception et l'affectation ?</span>
           <span class="faq-toggle">▼</span>
         </div>
-        <div class="faq-answer">
-          Absolument! Nous acceptons fournitures scolaires, matériel agricole, vêtements, livres, et autres ressources utiles pour nos bénéficiaires. Écrivez-nous pour discuter des détails logistiques.
-        </div>
+        <div class="faq-answer">Après l'envoi de votre message, le responsable des dons vous confirme la procédure et le moyen de paiement, puis vous répond sur l'affectation (cause choisie) et les modalités de suivi.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>Y a-t-il des frais ou commissions sur les dons?</span>
+          <span>Quels sont les moyens de paiement acceptés ?</span>
           <span class="faq-toggle">▼</span>
         </div>
-        <div class="faq-answer">
-          Non, 100% de votre don va directement aux projets et actions de terrain. Nous ne prélevons aucune commission ou frais de gestion sur les donations reçues.
-        </div>
+        <div class="faq-answer">Le responsable des dons vous précisera les moyens de paiement disponibles lors de la confirmation : virement, mobile money, cash, ou autre selon vos préférences.</div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.jpeg" alt="ONG Sabouyô — Paix, Environnement, Développement, Bénin" />
+        <img src="logo.jpeg" alt="ONG Sabouyô" />
         <p>Promouvoir la paix, l'égalité et le développement durable dans les départements au Bénin.</p>
         <div class="footer-contact-item"><span>📍</span><span>Quartier Baparape, Arrondissement III, Djougou, Donga</span></div>
         <div class="footer-contact-item"><span>📞</span><span>97 91 77 77 &nbsp;/&nbsp; 96 75 57 05</span></div>
@@ -710,79 +521,110 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 ONG Sabouyô — sabouyo.org. Tous droits réservés.</span>
-      <span>Site réalisé par <a href="https://wa.me/2290191175358?text=Bonjour%20DineTech%2C%20j%27ai%20visit%C3%A9%20le%20site%20de%20l%27ONG%20Sabouy%C3%B4%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20web%20pour%20mon%20organisation.%20Pouvez-vous%20me%20contacter%20%3F" target="_blank" rel="noopener noreferrer">DineTech</a> · Djougou, Bénin</span>
+      <span>Site réalisé par <a href="https://wa.me/2290191175358?text=Bonjour%20DineTech%2C%20j%27ai%20visit%C3%A9%20le%20site%20de%20l%27ONG%20Sabouy%C3%B4%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20web%20pour%20mon%20organisation.%20Pouvez-vous%20me%20contacter%20%3F" target="_blank" rel="noopener noreferrer">DineTech</a></span>
     </div>
   </footer>
 
   <script>
-    // ===== STATE =====
-    let selectedType = 'financier';
+    /* ===== STATE ===== */
     let selectedMontant = null;
+    let selectedCause = 'Don général';
+    const SABOUYO_WA = '22997917777';
+    const SABOUYO_EMAIL = 'ongsabouyo@yahoo.com';
 
-    // ===== CHIPS DONATEURS =====
-    document.querySelectorAll('#chips-wrap .chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('#chips-wrap .chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        selectedType = chip.dataset.type;
-      });
-    });
-
-    // ===== MONTANTS =====
+    /* ===== MONTANTS ===== */
     document.querySelectorAll('.montant-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.montant-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         selectedMontant = btn.dataset.montant;
         document.getElementById('montant-custom').value = '';
+        updatePreview();
       });
     });
 
-    document.getElementById('montant-custom').addEventListener('input', () => {
+    document.getElementById('montant-custom').addEventListener('input', (e) => {
       document.querySelectorAll('.montant-btn').forEach(b => b.classList.remove('active'));
+      if (e.target.value) selectedMontant = e.target.value;
+      updatePreview();
     });
 
-    // ===== SEND WHATSAPP =====
-    function sendWhatsApp() {
-      const name = document.getElementById('donor-name').value || 'Anonyme';
+    /* ===== CAUSES ===== */
+    document.querySelectorAll('.cause-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cause-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedCause = btn.dataset.cause;
+        updatePreview();
+      });
+    });
+
+    /* ===== PREVIEW ===== */
+    function buildMessage() {
+      const name = document.getElementById('donor-name').value || 'Non renseigné';
       const email = document.getElementById('donor-email').value || '';
-      const phone = document.getElementById('donor-phone').value || '';
-      const message = document.getElementById('donor-message').value || '';
-      const montant = selectedMontant || document.getElementById('montant-custom').value || 'non spécifié';
+      const msg = document.getElementById('donor-message').value || '';
+      const montant = selectedMontant || '—';
 
-      const text = `Bonjour,\n\nJe souhaite soutenir l'ONG Sabouyô.\n\n*Informations:*\n- Type: ${selectedType}\n- Montant: ${montant} XOF\n- Nom: ${name}\n- Email: ${email}\n- Téléphone: ${phone}\n\n${message ? `Message: ${message}\n\n` : ''}Merci!`;
-
-      window.open(`https://wa.me/2290191175358?text=${encodeURIComponent(text)}`);
+      const parts = [];
+      parts.push('Bonjour,');
+      parts.push('Je souhaite faire un don à l\'ONG Sabouyô (Paix, Environnement, Développement Durable).');
+      parts.push('');
+      parts.push('— INFORMATIONS —');
+      parts.push('Nom & Prénom : ' + name);
+      parts.push('Cause / Affectation : ' + selectedCause);
+      parts.push('Montant : ' + montant + ' XOF');
+      if (email) parts.push('Email : ' + email);
+      parts.push('');
+      if (msg) parts.push('— MESSAGE —\n' + msg + '\n');
+      parts.push('Merci de me confirmer le moyen de paiement et la procédure.');
+      return parts.join('\n');
     }
 
-    // ===== SEND EMAIL =====
-    function sendEmail() {
-      const name = document.getElementById('donor-name').value || 'Anonyme';
-      const email = document.getElementById('donor-email').value || '';
-      const phone = document.getElementById('donor-phone').value || '';
-      const message = document.getElementById('donor-message').value || '';
-      const montant = selectedMontant || document.getElementById('montant-custom').value || 'non spécifié';
-
-      const subject = `Demande de soutien - ${selectedType}`;
-      const body = `Bonjour,\n\nJe souhaite soutenir l'ONG Sabouyô.\n\nInformations:\n- Type: ${selectedType}\n- Montant: ${montant} XOF\n- Nom: ${name}\n- Email: ${email}\n- Téléphone: ${phone}\n\n${message ? `Message: ${message}\n\n` : ''}Merci!`;
-
-      window.location.href = `mailto:ongsabouyo@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    function updatePreview() {
+      document.getElementById('previewBox').textContent = buildMessage();
     }
 
-    // ===== FAQ TOGGLE =====
+    ['input', 'change'].forEach(ev => {
+      document.getElementById('donor-name').addEventListener(ev, updatePreview);
+      document.getElementById('donor-email').addEventListener(ev, updatePreview);
+      document.getElementById('donor-message').addEventListener(ev, updatePreview);
+    });
+
+    updatePreview();
+
+    /* ===== SEND ACTIONS ===== */
+    document.getElementById('btnWhatsApp').addEventListener('click', () => {
+      const msg = buildMessage();
+      window.open(`https://wa.me/${SABOUYO_WA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      document.getElementById('formState').textContent = '✅ WhatsApp s\'ouvre avec votre don.';
+      setTimeout(() => { document.getElementById('formState').textContent = ''; }, 2200);
+    });
+
+    document.getElementById('btnEmail').addEventListener('click', () => {
+      const name = document.getElementById('donor-name').value;
+      const msg = buildMessage();
+      const subject = (name ? (name + ' — ') : '') + 'Don à l\'ONG Sabouyô';
+      const mailto = `mailto:${SABOUYO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
+      window.location.href = mailto;
+      document.getElementById('formState').textContent = '✅ Email préparé (ouverture de votre client mail).';
+      setTimeout(() => { document.getElementById('formState').textContent = ''; }, 2200);
+    });
+
+    /* ===== FAQ TOGGLE ===== */
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
         q.parentElement.classList.toggle('active');
       });
     });
 
-    // ===== NAV SCROLL =====
+    /* ===== NAV SCROLL ===== */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // ===== BURGER MENU =====
+    /* ===== BURGER MENU ===== */
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
     burger.addEventListener('click', () => {
@@ -799,7 +641,7 @@
       });
     });
 
-    // ===== REVEAL AU SCROLL =====
+    /* ===== REVEAL SCROLL ===== */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
