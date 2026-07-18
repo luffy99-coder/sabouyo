@@ -124,17 +124,26 @@
     .mobile-menu a:hover { background: rgba(255,255,255,0.1); color: #fff; }
     .mobile-menu .btn-don { background: var(--vert) !important; color: #fff !important; text-align: center; margin-top: 8px; font-weight: 600 !important; }
 
-    /* ===== HERO ===== */
-    .hero { position: relative; height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('hero.jpeg') center/cover no-repeat; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(27,58,92,0.88) 0%, rgba(27,58,92,0.72) 50%, rgba(46,125,79,0.60) 100%); }
-    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 24px; margin-top: 70px; }
-    .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 20px; }
-    .hero h1 em { font-style: normal; color: #7EC8A0; }
-    .hero-sub { font-size: clamp(0.95rem, 2vw, 1.1rem); color: rgba(255,255,255,0.85); font-weight: 300; line-height: 1.75; max-width: 600px; margin: 0 auto; }
+    /* ===== PAGE HERO ===== */
+    .page-hero { margin-top: 70px; position: relative; padding: 100px 5% 110px; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('hero.jpeg') center/cover no-repeat; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(27,58,92,0.93) 0%, rgba(27,58,92,0.80) 60%, rgba(46,125,79,0.70) 100%); }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: #7EC8A0; }
+    .breadcrumb span { color: rgba(255,255,255,0.35); }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 20px; }
+    .page-hero h1 em { font-style: normal; color: #7EC8A0; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.75; max-width: 580px; }
+    .page-hero-diagonal { position: absolute; bottom: -2px; left: 0; right: 0; line-height: 0; z-index: 3; }
+    .page-hero-diagonal svg { width: 100%; }
 
     /* ===== MAIN SECTIONS ===== */
     main { padding: 60px 5% 40px; max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vert); margin-bottom: 10px; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 700; color: var(--bleu); line-height: 1.2; margin-bottom: 16px; }
+    .divider { width: 48px; height: 3px; background: linear-gradient(to right, var(--vert), var(--bleu)); border-radius: 2px; margin: 16px 0 36px; }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
     .contact-col { }
@@ -183,47 +192,32 @@
     .pole-check label { cursor: pointer; font-size: 0.95rem; }
 
     /* ===== FOOTER ===== */
-    footer {
-      background: var(--bleu);
-      color: #fff;
-      margin-top: 80px;
-      padding: 50px 5% 20px;
-    }
-    .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .footer-brand img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
-    .footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 16px; }
-    .footer-contact-item { display: flex; gap: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 10px; align-items: flex-start; }
-    .footer-social { display: flex; gap: 12px; margin-top: 16px; }
-    .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; color: #fff; text-decoration: none; font-weight: 700; transition: background 0.2s; }
-    .footer-social a:hover { background: var(--vert); }
-    footer h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; color: #fff; }
+    footer { background: #0F2340; color: rgba(255,255,255,0.75); padding: 60px 5% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--vert); margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; max-width: 240px; margin-bottom: 16px; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; margin-bottom: 8px; }
+    .footer-contact-item span:first-child { color: var(--vert); flex-shrink: 0; }
+    footer h4 { font-family: var(--serif); font-size: 1rem; color: #fff; font-weight: 600; margin-bottom: 18px; }
     footer ul { list-style: none; }
-    footer li { margin-bottom: 10px; }
-    footer a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    footer a:hover { color: #fff; }
-    .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .footer-bottom span { display: block; margin-bottom: 8px; }
+    footer ul li { margin-bottom: 10px; }
+    footer ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    footer ul a:hover { color: #7EC8A0; }
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .footer-social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+    .footer-social a:hover { border-color: var(--vert); color: #7EC8A0; background: rgba(46,125,79,0.15); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; font-size: 0.78rem; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom a:hover { color: #7EC8A0; }
 
     /* ===== REVEAL ANIMATION ===== */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
       nav { padding: 0 4%; }
       .nav-links { display: none; }
@@ -231,9 +225,13 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-wrapper { padding: 24px; }
       .poles-list { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       main { padding: 40px 4% 30px; }
-      .hero h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); margin-bottom: 16px; }
+      .page-hero { padding: 80px 5% 90px; }
+      .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+    }
+    @media (max-width: 480px) {
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -273,15 +271,25 @@
     <a href="don.html" class="btn-don">Donner</a>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Contactez l'ONG <em>Sabouyô</em></h1>
-      <p class="hero-sub">Nous sommes à votre écoute pour discuter de partenariats, adhésions et collaborations pour la paix et le développement durable.</p>
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="page-hero-bg" role="img" aria-label="Contactez l'ONG Sabouyô à Djougou, Bénin"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span>›</span>
+        <span>Contact</span>
+      </nav>
+      <h1>Nous <em>contacter</em></h1>
+      <p>Nous sommes à votre écoute pour discuter de partenariats, adhésions et collaborations pour la paix et le développement durable au Bénin.</p>
     </div>
-  </section>
+    <div class="page-hero-diagonal" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 L1440,0 L1440,60 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
 
   <!-- ===== MAIN CONTENT ===== -->
   <main>
@@ -291,7 +299,9 @@
 
       <!-- LEFT: INFO -->
       <div class="contact-col reveal">
-        <h2>Nous joindre</h2>
+        <p class="section-label">Coordonnées</p>
+        <h2 class="section-title">Nous joindre</h2>
+        <div class="divider"></div>
 
         <div class="contact-info">
           <div class="info-block">
@@ -323,7 +333,9 @@
 
       <!-- RIGHT: FORM -->
       <div class="contact-col reveal">
-        <h2>Envoyez un message</h2>
+        <p class="section-label">Communication</p>
+        <h2 class="section-title">Envoyez un message</h2>
+        <div class="divider"></div>
 
         <div class="form-wrapper">
           <div class="form-group">
@@ -367,7 +379,9 @@
 
     <!-- ===== ADHÉSION / PARTENARIAT ===== -->
     <div class="poles-section reveal">
-      <h2>Rejoindre un pôle ou s'engager</h2>
+      <p class="section-label">Engagement & Partenariat</p>
+      <h2 class="section-title">Rejoindre un pôle ou s'engager</h2>
+      <div class="divider"></div>
       <p style="color: var(--gris); line-height: 1.6; max-width: 700px; margin-bottom: 30px;">
         L'ONG Sabouyô fonctionne autour de pôles thématiques. Sélectionnez celui(ceux) qui correspond(ent) à vos intérêts et compétences.
       </p>
@@ -472,7 +486,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 ONG Sabouyô — sabouyo.org. Tous droits réservés.</span>
-      <span>Site réalisé par <a href="https://wa.me/2290191175358?text=Bonjour%20DineTech%2C%20j%27ai%20visit%C3%A9%20le%20site%20de%20l%27ONG%20Sabouy%C3%B4%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20web%20pour%20mon%20organisation.%20Pouvez-vous%20me%20contacter%20%3F" target="_blank" rel="noopener noreferrer">DineTech</a> · Djougou, Bénin</span>
+      <span>Site réalisé par <a href="https://wa.me/2290191175358?text=Bonjour%20DineTech%2C%20j%27ai%20visit%C3%A9%20le%20site%20de%20l%27ONG%20Sabouy%C3%B4%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20web%20pour%20mon%20organisation.%20Pouvez-vous%20me%20contacter%20%3F" target="_blank" rel="noopener noreferrer">DineTech</a></span>
     </div>
   </footer>
 
